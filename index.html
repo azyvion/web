@@ -1321,6 +1321,76 @@
             }
         }
 
+    
+        /* ---------------------------------------------------------
+           WHATSAPP FLOATING BUTTON
+           --------------------------------------------------------- */
+
+        .whatsapp-float {
+            position: fixed;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            z-index: 1500;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 2px 8px rgba(11, 22, 61, 0.15);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5), 0 4px 12px rgba(11, 22, 61, 0.2);
+        }
+
+        .whatsapp-float svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 68px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--color-primary);
+            color: #fff;
+            font-family: var(--font-body, inherit);
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 0.5rem 0.9rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-4px);
+        }
+
+        @media (max-width: 560px) {
+            .whatsapp-float {
+                right: 1rem;
+                bottom: 1rem;
+                width: 52px;
+                height: 52px;
+            }
+            .whatsapp-float svg {
+                width: 26px;
+                height: 26px;
+            }
+            .whatsapp-tooltip {
+                display: none;
+            }
+        }
+
     </style>
 
 </head>
@@ -2052,6 +2122,25 @@
     })();
     </script>
 
+
+
+    <!-- ========================================= -->
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <!-- ========================================= -->
+
+    <a
+        href="https://wa.me/50255630559?text=Hola%20Azyvion%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with Azyvion on WhatsApp"
+    >
+        <span class="whatsapp-tooltip">Chat with us</span>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 3C7.03 3 3 7.03 3 12c0 1.77.5 3.42 1.37 4.83L3 21l4.3-1.34A8.93 8.93 0 0 0 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9Z" fill="#fff"/>
+            <path d="M9.1 8.2c-.2-.45-.42-.46-.62-.47h-.53c-.18 0-.48.07-.73.35-.25.28-.96.93-.96 2.27s.98 2.64 1.12 2.82c.14.18 1.9 3 4.65 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.12-.25-.19-.53-.33-.28-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.6.14-.18.28-.7.88-.86 1.06-.16.18-.31.2-.59.07-.28-.14-1.17-.43-2.23-1.38-.83-.74-1.38-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.5-.07-.14-.6-1.5-.85-2.05Z" fill="#25D366"/>
+        </svg>
+    </a>
 
     <!-- ========================================= -->
     <!-- COOKIE CONSENT BANNER -->
