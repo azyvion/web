@@ -1069,6 +1069,12 @@
             margin-top: var(--space-1);
         }
 
+        .form-submit:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
         .form-note {
             margin-top: var(--space-2);
             font-size: var(--fs-small);
@@ -1916,6 +1922,11 @@
 
                 <form class="contact-form reveal-up" id="contactForm" novalidate>
 
+                    <input type="hidden" name="access_key" value="3566eb79-a149-4fc1-897b-edea9f1b90d4">
+                    <input type="hidden" name="subject" value="New message from Azyvion website">
+                    <input type="hidden" name="from_name" value="Azyvion Website">
+                    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -1929,7 +1940,7 @@
 
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <select id="subject" name="subject">
+                        <select id="subject" name="topic">
                             <option value="general">General inquiry</option>
                             <option value="azyvion-ai">Azyvion AI</option>
                             <option value="atlas">ATLAS early access</option>
@@ -1942,8 +1953,8 @@
                         <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about what you're looking for" required></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary form-submit">
-                        Send Message
+                    <button type="submit" class="btn btn-primary form-submit" id="formSubmitBtn">
+                        <span class="form-submit-label">Send Message</span>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </button>
 
@@ -2106,17 +2117,52 @@
         }, { threshold: 0.5 });
         statNumbers.forEach(function (el) { statsObserver.observe(el); });
 
-        // Contact form (static build: shows a confirmation message)
+        // Contact form — sends real emails via Web3Forms (https://web3forms.com)
         var form = document.getElementById('contactForm');
         var formNote = document.getElementById('formNote');
+        var submitBtn = document.getElementById('formSubmitBtn');
+        var submitLabel = submitBtn ? submitBtn.querySelector('.form-submit-label') : null;
+
         form.addEventListener('submit', function (e) {
             e.preventDefault();
+
             if (!form.checkValidity()) {
                 formNote.textContent = 'Please fill in all required fields.';
+                formNote.style.color = '';
                 return;
             }
-            formNote.textContent = 'Thanks — your message has been noted. We\'ll get back to you soon.';
-            form.reset();
+
+            submitBtn.disabled = true;
+            if (submitLabel) submitLabel.textContent = 'Sending...';
+            formNote.textContent = '';
+
+            var formData = new FormData(form);
+            var payload = Object.fromEntries(formData);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify(payload)
+            })
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    if (data.success) {
+                        formNote.textContent = 'Thanks — your message has been sent. We\'ll get back to you soon.';
+                        formNote.style.color = '';
+                        form.reset();
+                    } else {
+                        formNote.textContent = 'Something went wrong. Please try again or email us directly.';
+                        formNote.style.color = '#E24444';
+                    }
+                })
+                .catch(function () {
+                    formNote.textContent = 'Something went wrong. Please check your connection and try again.';
+                    formNote.style.color = '#E24444';
+                })
+                .finally(function () {
+                    submitBtn.disabled = false;
+                    if (submitLabel) submitLabel.textContent = 'Send Message';
+                });
         });
 
     })();
