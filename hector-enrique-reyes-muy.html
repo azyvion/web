@@ -179,11 +179,15 @@
       object-fit: cover;
       object-position: center top;
       display: block;
+      opacity: 1;
+      filter: none;
+      -webkit-mask-image: none;
+      mask-image: none;
+      transform: scale(1.08);
+      transform-origin: center top;
     }
-    /* Sin overlay en desktop */
-    .hero-photo-bg::after {
-      content: none;
-    }
+    /* La foto de escritorio se muestra sin overlays ni degradados CSS */
+    .hero-photo-bg::after { content: none !important; display: none !important; }
 
     .hero-bg {
       position: absolute; inset: 0; z-index: 1;
@@ -410,23 +414,6 @@
 
     a:focus-visible { outline: 2px solid var(--color-secondary); outline-offset: 3px; border-radius: 4px; }
 
-
-    /* EXPANSIÓN INTERNACIONAL: ilustración fluida y adaptable */
-    .global-growth { padding: clamp(2.5rem, 6vw, 5rem) 0; background: linear-gradient(135deg,#f7faff 0%,#fff 62%,#edf4ff 100%); overflow: hidden; }
-    .global-growth-grid { display:grid; grid-template-columns:minmax(0,1fr); align-items:center; gap:clamp(1.5rem,4vw,4rem); }
-    .growth-copy .section-tag { margin-bottom:1rem; }
-    .growth-title { font-family:var(--font-display); color:var(--color-primary); font-size:clamp(1.9rem,4vw,3.2rem); line-height:1.08; margin-bottom:1rem; }
-    .growth-title span { color:var(--color-secondary); }
-    .growth-copy p { color:var(--color-gray); max-width:38rem; }
-    .growth-points { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.25rem; }
-    .growth-points span { background:#fff; border:1px solid #dce7fb; border-radius:999px; padding:.45rem .8rem; color:var(--color-primary); font-size:.88rem; }
-    .growth-visual { position:relative; min-width:0; aspect-ratio:1.35 / 1; border:1px solid #dfe9fb; border-radius:24px; overflow:hidden; background:radial-gradient(ellipse at 55% 48%,#e1edff 0%,#f5f8ff 48%,#fff 78%); box-shadow:var(--shadow-md); }
-    .growth-visual svg { position:absolute; inset:0; width:100%; height:100%; display:block; }
-    .growth-caption { position:absolute; left:5%; bottom:6%; color:var(--color-primary); font-family:var(--font-display); font-weight:700; font-size:clamp(.85rem,1.6vw,1.1rem); line-height:1.4; }
-    .growth-caption small { display:block; font-family:var(--font-body); font-weight:400; color:var(--color-gray); font-size:.78em; }
-    @media (max-width:760px) { .global-growth-grid { grid-template-columns:1fr; } }
-    @media (max-width:420px) { .global-growth .container { padding-inline:1rem; } .growth-points span { font-size:.8rem; } }
-
     /* RESPONSIVE */
     @media (max-width: 860px) {
       .hero-content { grid-template-columns: 1fr; gap: 0; }
@@ -434,41 +421,53 @@
       .hero-photo-bg {
         position: relative;
         width: 100%;
-        height: 100vw;
-        max-height: 100vw;
+        height: clamp(340px, 78vw, 500px);
+        max-height: 500px;
         overflow: hidden;
-        margin-bottom: 0;
+        margin: 0;
         border-radius: 0;
+        flex: 0 0 auto;
       }
       .hero-photo-bg img {
         width: 100%;
-        height: 133%;
+        height: 100%;
         object-fit: cover;
-        object-position: center top;
-        margin-top: 0;
+        object-position: center 12%;
+        margin: 0;
+        transform: scale(1.04);
       }
-      /* Fade sutil solo en mobile — 20% de opacidad al blanco */
-      .hero-photo-bg::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, transparent 60%, rgba(255,255,255,0.2) 100%);
-      }
+      /* Sin degradado blanco: recorte más corto para eliminar el espacio vacío */
+      .hero-photo-bg::after { content: none !important; display: none !important; }
       .hero {
         flex-direction: column;
         align-items: stretch;
         padding-top: var(--header-h);
         gap: 0;
+        min-height: 0;
       }
       .hero > .container {
-        padding-top: var(--space-2);
+        padding-top: 0;
+      }
+      .hero-content {
+        padding-top: 0;
+        padding-bottom: var(--space-5);
+      }
+      .eyebrow {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        white-space: normal;
+        max-width: 100%;
       }
       .about-grid { grid-template-columns: 1fr; }
       .about-sticky { position: static; }
       .pillars-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 620px) {
+      .hero-photo-bg { height: clamp(310px, 72vw, 430px); }
       .hero-title { font-size: clamp(2rem, 8vw, 2.8rem); }
+      .hero-role { margin-bottom: 0.85rem; }
+      .hero-location { margin-bottom: 1rem; }
+      .hero-subtitle { margin-bottom: 1.25rem; }
       .footer-inner { flex-direction: column; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -631,22 +630,6 @@
         <p>Define la dirección, cultura y visión de Azyvion, construyendo un equipo orientado al impacto, la calidad y la evolución constante.</p>
       </article>
     </div>
-  </div>
-</section>
-
-
-<!-- EXPANSIÓN INTERNACIONAL -->
-<section class="global-growth" id="expansion-internacional" aria-labelledby="growth-heading">
-  <div class="container global-growth-grid">
-    <div class="growth-copy reveal-up">
-      <div class="section-tag">Presencia internacional</div>
-      <h2 class="growth-title" id="growth-heading">Azyvion se expande a un ritmo <span>acelerado</span> a nivel internacional</h2>
-      <p>Azyvion Technologies está ampliando su presencia internacional con una visión de crecimiento sostenido, desarrollando soluciones tecnológicas para empresas y nuevos mercados. Actualmente cuenta con personal en Guatemala, Colombia y Perú, y busca llevar su ecosistema de soluciones a más países.</p>
-      <div class="growth-points" aria-label="Países con presencia de equipo">
-        <span>🇬🇹 Guatemala</span><span>🇨🇴 Colombia</span><span>🇵🇪 Perú</span><span>🌎 Visión internacional</span>
-      </div>
-    </div>
-
   </div>
 </section>
 
