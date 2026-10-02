@@ -8,7 +8,8 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0B163D">
 <link rel="canonical" href="https://azyvion.pages.dev/cookies.html">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="shortcut icon" href="./favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -39,14 +40,16 @@ a:hover{color:#0B163D;}
 .site-footer{background:var(--color-primary);color:rgba(255,255,255,.55);padding:1.5rem 2rem;text-align:center;font-size:.82rem;}
 .site-footer a{color:rgba(255,255,255,.75);text-decoration:underline;}
 @media(max-width:600px){.prose{padding:0 1.25rem;}.navbar{padding:0 1.25rem;}.cookie-table{font-size:.78rem;}.cookie-table th,.cookie-table td{padding:.5rem .6rem;}}
+.nav-logo{max-width:180px;overflow:hidden;flex-shrink:0;}
+.wordmark-logo{width:148px;max-width:100%;height:auto;max-height:32px;object-fit:contain;display:block;}
+@media(max-width:480px){.wordmark-logo{width:118px;max-height:26px;}.nav-logo{max-width:135px;}}
 </style>
 </head>
 <body>
 <header class="site-header">
   <nav class="navbar" aria-label="Navegación">
-    <a href="index.html" class="nav-logo">
-      <svg width="22" height="24" viewBox="0 0 26 28" fill="none"><path d="M13 2L24 8.5V19.5L13 26L2 19.5V8.5L13 2Z" fill="#0B163D"/><path d="M8 11L13 8L18 11V17L13 20L8 17V11Z" fill="#2979FF"/></svg>
-      AZYVION
+    <a href="index.html" class="nav-logo" aria-label="Azyvion — Inicio">
+      <img class="wordmark-logo" src="./azyvion-wordmark.png" alt="AZYVION">
     </a>
     <a href="index.html" class="nav-back">← Volver</a>
   </nav>

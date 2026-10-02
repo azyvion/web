@@ -4,10 +4,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Azyvion — Construyendo Tecnología Inteligente</title>
-    <meta name="description" content="Azyvion es una empresa tecnológica que construye software inteligente, productos de IA y plataformas para desarrolladores. Descubre Azyvion AI y ATLAS.">
+    <title>AZYVION | Tecnología Inteligente</title>
+    <meta name="description" content="AZYVION es una empresa tecnológica que construye software inteligente, productos de IA y plataformas para desarrolladores. Descubre Azyvion AI y ATLAS.">
     <meta name="keywords" content="Azyvion, Azyvion AI, ATLAS, inteligencia artificial, plataforma para desarrolladores, empresa de tecnología, Guatemala">
-    <meta name="author" content="Azyvion">
+    <meta name="author" content="AZYVION">
     <meta name="theme-color" content="#0B163D">
     <meta name="robots" content="index, follow">
 
@@ -17,20 +17,21 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://azyvion.pages.dev/">
-    <meta property="og:title" content="Azyvion — Construyendo Tecnología Inteligente">
+    <meta property="og:title" content="AZYVION | Tecnología Inteligente">
     <meta property="og:description" content="Software inteligente, IA y plataformas para desarrolladores. Descubre el ecosistema Azyvion.">
     <meta property="og:image" content="https://azyvion.pages.dev/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Azyvion — Construyendo Tecnología Inteligente">
+    <meta name="twitter:title" content="AZYVION | Tecnología Inteligente">
     <meta name="twitter:description" content="Software inteligente, IA y plataformas para desarrolladores.">
 
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="c4a1c29e41a593fe">
 
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="shortcut icon" href="./favicon.ico">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -206,7 +207,7 @@
             font-size: 1.08rem; letter-spacing: 0.06em; color: var(--color-primary);
             flex-shrink: 0;
         }
-        .nav-logo .mark-img { width: 26px; height: auto; }
+        .nav-logo .mark-img { width: 26px; height: auto; }\n        .wordmark-logo { width: 148px; max-width: 100%; height: auto; max-height: 32px; object-fit: contain; display: block; }\n        .footer-wordmark { filter: brightness(0) invert(1) !important; opacity: 1 !important; width: 148px; max-width: 100%; max-height: 32px; height: auto; }
         .nav-menu {
             display: flex; align-items: center; gap: var(--space-3);
             margin-inline-start: auto;
@@ -292,17 +293,12 @@
         .scroll-cue {
             position: absolute; left: 50%; bottom: var(--space-3);
             transform: translateX(-50%);
-            width: 22px; height: 36px;
-            border: 1.5px solid var(--color-border);
-            border-radius: var(--radius-pill); z-index: 2;
-        }
-        .scroll-cue span {
-            position: absolute; top: 7px; left: 50%;
-            transform: translateX(-50%);
-            width: 3px; height: 7px; border-radius: 2px;
-            background: var(--color-secondary);
+            display: flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; z-index: 2;
+            color: var(--color-gray);
             animation: scrollDot 1.8s var(--ease-in-out) infinite;
         }
+        .scroll-cue span { display: none; }
 
         /* ── ABOUT ── */
         .about { padding-block: var(--space-8); }
@@ -334,7 +330,7 @@
 
         /* ── CEO SECTION ── */
         .team { background: var(--color-bg-alt); }
-        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 360px)); gap: var(--space-4); justify-content: center; }
         .team-card {
             background: var(--color-bg); border: 1px solid var(--color-border);
             border-radius: var(--radius-lg); padding: var(--space-4);
@@ -595,6 +591,57 @@
             .reveal-up { opacity:1; transform:none; }
         }
 
+        /* ── REVIEWS ── */
+        .reviews { background: var(--color-bg); }
+        .reviews-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-4);
+        }
+        .review-card {
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-4);
+            display: flex; flex-direction: column; gap: var(--space-3);
+            transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base);
+        }
+        .review-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .review-stars {
+            color: #F59E0B;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+        .review-text {
+            color: var(--color-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            flex: 1;
+        }
+        .review-author {
+            display: flex; align-items: center; gap: var(--space-2);
+            padding-top: var(--space-2);
+            border-top: 1px solid var(--color-border);
+        }
+        .review-avatar {
+            width: 46px; height: 46px; border-radius: 50%;
+            overflow: hidden; flex-shrink: 0;
+            border: 2px solid var(--color-secondary-16);
+            background: var(--color-bg-alt);
+        }
+        .review-avatar img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+        }
+        .review-name {
+            font-family: var(--font-display); font-weight: 600;
+            font-size: 0.9rem; color: var(--color-primary);
+        }
+        .review-role {
+            font-size: var(--fs-small); color: var(--color-gray); margin-top: 0.1rem;
+        }
+        @media (max-width: 860px) {
+            .reviews-grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+        }
+
         /* ── COOKIE BANNER ── */
         .cookie-banner {
             position: fixed; left:0; right:0; bottom:0; z-index:2000;
@@ -655,7 +702,7 @@
         }
         @media (max-width:860px) {
             .hero-content { grid-template-columns:1fr; }
-            .hero-visual { order:-1; max-width:300px; margin-inline:auto; }
+            .hero-visual { display:none !important; }
             .nav-menu {
                 position:fixed; inset:var(--header-h) 0 0 0;
                 flex-direction:column; align-items:flex-start; gap:0;
@@ -681,6 +728,89 @@
             .whatsapp-tooltip { display:none; }
             .cookie-banner-actions { width:100%; justify-content:flex-start; }
         }
+    
+        .swipe-hint-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            color: var(--color-gray);
+            font-size: 0.8rem;
+            font-family: var(--font-display);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+        .swipe-hint-bar svg {
+            animation: swipeBounce 1.5s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes swipeBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
+        .nav-logo { max-width: 180px; overflow: hidden; }
+        @media (max-width: 480px) {
+            .wordmark-logo { width: 118px; max-height: 26px; }
+            .footer-wordmark { width: 138px; }
+            .nav-logo { max-width: 135px; }
+        }
+
+    .footer-brand .wordmark-logo { filter: brightness(0) invert(1) !important; opacity: 1 !important; }\n    
+        /* Ajustes responsive: reducir espacios verticales excesivos en móvil */
+        @media (max-width: 768px) {
+            .hero, .hero-section, section.hero, #home {
+                min-height: 0 !important;
+                height: auto !important;
+                align-items: flex-start !important;
+                padding-top: calc(var(--header-h) + 1rem) !important;
+                padding-bottom: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            #about { padding-top: 2.5rem !important; margin-top: 0 !important; }
+            .swipe-hint {
+                display: flex !important;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.4rem;
+                padding: 1.25rem 0 1.5rem;
+                color: var(--color-gray);
+                font-size: 0.78rem;
+                font-family: var(--font-display);
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+            }
+            .swipe-hint svg { animation: swipeBounce 1.6s var(--ease-in-out) infinite; }
+            @keyframes swipeBounce {
+                0%, 100% { transform: translateY(0); opacity: 0.5; }
+                50% { transform: translateY(6px); opacity: 1; }
+            }
+            .hero-content { padding-top: 1rem !important; padding-bottom: 0 !important; grid-template-columns: 1fr !important; }
+            .hero-visual, .hero-graph, .hero-visual img { display: none !important; }
+            section { padding-top: 3.25rem !important; padding-bottom: 3.25rem !important; }
+            .section-header { margin-bottom: 2rem !important; }
+            .section-header p { margin-top: 0.75rem !important; }
+            .team-grid, .products-grid, .product-grid, .feature-grid {
+                row-gap: 1.25rem !important;
+            }
+            .team-card, .product-card, .feature-card { margin-bottom: 0 !important; }
+            .scroll-indicator { margin-top: 1rem !important; }
+            .scroll-cue { display: none !important; }
+            .cookie-banner { gap: 1rem !important; }
+        }
+        @media (max-width: 480px) {
+            section { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+            .hero, .hero-section, section.hero {
+                padding-top: calc(var(--header-h) + 0.75rem) !important;
+                padding-bottom: 1.5rem !important;
+            }
+            .hero-content { padding-top: 0.5rem !important; padding-bottom: 0.75rem !important; }
+            .section-header { margin-bottom: 1.5rem !important; }
+            .section-header h2 { margin-bottom: 0.65rem !important; }
+            .section-header p { margin-top: 0.5rem !important; }
+            .team-card, .product-card, .feature-card { padding: 1.25rem !important; }
+            .products-grid, .product-grid, .team-grid, .feature-grid { gap: 1rem !important; }
+        }
+
     </style>
 </head>
 <body>
@@ -690,13 +820,7 @@
 <!-- HEADER -->
 <header class="site-header" id="siteHeader">
     <nav class="navbar container" aria-label="Navegación principal">
-        <a href="#home" class="nav-logo" aria-label="Azyvion — Inicio">
-            <svg width="26" height="28" viewBox="0 0 26 28" fill="none" aria-hidden="true">
-                <path d="M13 2L24 8.5V19.5L13 26L2 19.5V8.5L13 2Z" fill="#0B163D" stroke="#0B163D" stroke-width="1"/>
-                <path d="M8 11L13 8L18 11V17L13 20L8 17V11Z" fill="#2979FF"/>
-            </svg>
-            <span>AZYVION</span>
-        </a>
+        <a href="#home" class="nav-logo" aria-label="Azyvion — Inicio"><img class="wordmark-logo" src="./azyvion-wordmark.png" alt="AZYVION"></a>
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
             <span></span><span></span><span></span>
         </button>
@@ -736,46 +860,27 @@
                 </a>
                 <a href="#about" class="btn btn-ghost">Saber más</a>
             </div>
+            <div class="swipe-hint-bar">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 5L8 11L13 5" stroke="#667085" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Desliza para saber más
+            </div>
         </div>
-        <div class="hero-visual reveal-up" style="--d:3" aria-hidden="true">
-            <svg class="hero-graph" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#2979FF" stop-opacity="0.9"/>
-                        <stop offset="100%" stop-color="#0B163D" stop-opacity="0.9"/>
-                    </linearGradient>
-                    <radialGradient id="hh" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stop-color="#2979FF" stop-opacity="0.14"/>
-                        <stop offset="100%" stop-color="#2979FF" stop-opacity="0"/>
-                    </radialGradient>
-                </defs>
-                <circle cx="240" cy="240" r="220" fill="url(#hh)"/>
-                <circle class="orbit orbit-1" cx="240" cy="240" r="170" stroke="#E5E7EB" stroke-width="1"/>
-                <circle class="orbit orbit-2" cx="240" cy="240" r="120" stroke="#E5E7EB" stroke-width="1"/>
-                <g class="graph-core">
-                    <circle cx="240" cy="240" r="34" fill="#FFFFFF" stroke="url(#gg)" stroke-width="1.6"/>
-                    <path d="M228 240L240 234L252 240V248L240 254L228 248V240Z" fill="#2979FF"/>
-                </g>
-                <g class="graph-node graph-node-1">
-                    <line x1="240" y1="240" x2="240" y2="70" stroke="#2979FF" stroke-width="1" stroke-opacity="0.35"/>
-                    <circle cx="240" cy="70" r="10" fill="#2979FF"/>
-                </g>
-                <g class="graph-node graph-node-2">
-                    <line x1="240" y1="240" x2="410" y2="240" stroke="#2979FF" stroke-width="1" stroke-opacity="0.35"/>
-                    <circle cx="410" cy="240" r="8" fill="#0B163D"/>
-                </g>
-                <g class="graph-node graph-node-3">
-                    <line x1="240" y1="240" x2="120" y2="360" stroke="#2979FF" stroke-width="1" stroke-opacity="0.35"/>
-                    <circle cx="120" cy="360" r="7" fill="#2979FF"/>
-                </g>
-                <g class="graph-node graph-node-4">
-                    <line x1="240" y1="240" x2="360" y2="360" stroke="#2979FF" stroke-width="1" stroke-opacity="0.35"/>
-                    <circle cx="360" cy="360" r="6" fill="#0B163D"/>
-                </g>
-            </svg>
+        <div class="hero-visual">
+            <img
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80&auto=format&fit=crop"
+                alt="Inteligencia artificial y tecnología"
+                class="hero-graph"
+                style="border-radius:20px;box-shadow:0 24px 64px rgba(41,121,255,0.18);object-fit:cover;width:100%;max-height:420px;"
+            >
         </div>
     </div>
-    <a href="#about" class="scroll-cue" aria-label="Ir a la sección Nosotros"><span></span></a>
+    <a href="#about" class="scroll-cue" aria-label="Ir a la sección Nosotros">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
 </section>
 
 <!-- ABOUT -->
@@ -828,14 +933,17 @@
             <p class="section-subtitle reveal-up">Construimos con pasión, propósito y tecnología de vanguardia.</p>
         </div>
         <div class="team-grid">
-            <div class="team-card reveal-up">
+            <a class="team-card reveal-up"
+               href="https://hector-enrique-reyes.pages.dev/"
+               aria-label="Conoce más sobre Héctor Reyes, CEO y fundador de Azyvion"
+               style="display:block;color:inherit;text-decoration:none;cursor:pointer">
                 <div class="team-avatar">
                     <img src="hector.jpg"
                          alt="Héctor Reyes, CEO de Azyvion"
                          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                     <div class="avatar-initials" style="display:none">HR</div>
                 </div>
-                <div class="team-name">Hector Reyes</div>
+                <div class="team-name">Héctor Reyes</div>
                 <div class="team-role">CEO &amp; Fundador</div>
                 <div class="team-nationality">
                     <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
@@ -846,7 +954,7 @@
                     Guatemalteco
                 </div>
                 <p class="team-bio">Fundador y CEO de Azyvion. Apasionado por la inteligencia artificial y la tecnología que cambia vidas.</p>
-            </div>
+            </a>
         </div>
     </div>
 </section>
@@ -1093,6 +1201,62 @@
     </div>
 </section>
 
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+    <div class="container">
+        <div class="section-title center">
+            <span class="section-tag reveal-up">Reseñas</span>
+            <h2 class="reveal-up">Lo que dicen los líderes que nos usan.</h2>
+            <p class="section-subtitle reveal-up">Opiniones reales de quienes ya confían en el ecosistema Azyvion.</p>
+        </div>
+        <div class="reviews-grid">
+
+            <div class="review-card reveal-up">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Azyvion AI transformó la forma en que mi equipo analiza datos. En semanas logramos automatizar procesos que antes tomaban días enteros."</p>
+                <div class="review-author">
+                    <div class="review-avatar">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&q=80&auto=format&fit=crop&crop=face" alt="CEO retrato">
+                    </div>
+                    <div>
+                        <div class="review-name">M. Rodríguez</div>
+                        <div class="review-role">CEO, Empresa de Consultoría · Guatemala</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card reveal-up">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Una plataforma pensada para el futuro. La experiencia con Azyvion AI es fluida, intuitiva y sorprendentemente potente para el tamaño del equipo detrás."</p>
+                <div class="review-author">
+                    <div class="review-avatar">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&q=80&auto=format&fit=crop&crop=face" alt="CEO retrato">
+                    </div>
+                    <div>
+                        <div class="review-name">C. Morales</div>
+                        <div class="review-role">Founder & CEO, Startup Tecnológica · México</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card reveal-up">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Lo que más me impresionó es la visión detrás del producto. No es solo una herramienta de IA más — es un ecosistema construido con propósito."</p>
+                <div class="review-author">
+                    <div class="review-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&q=80&auto=format&fit=crop&crop=face" alt="CEO retrato">
+                    </div>
+                    <div>
+                        <div class="review-name">A. López</div>
+                        <div class="review-role">Director General, Agencia Digital · Colombia</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="contact">
     <div class="container contact-grid">
@@ -1103,7 +1267,7 @@
             <ul class="contact-details">
                 <li>
                     <span class="contact-label">Correo</span>
-                    <a href="mailto:hello@azyvion.com">hello@azyvion.com</a>
+                    <a href="mailto:azyvion.tech@gmail.com">azyvion.tech@gmail.com</a>
                 </li>
                 <li>
                     <span class="contact-label">Ubicación</span>
@@ -1159,13 +1323,7 @@
 <footer class="site-footer">
     <div class="container footer-grid">
         <div class="footer-brand">
-            <a href="#home" class="nav-logo footer-logo" aria-label="Azyvion — Inicio">
-                <svg width="22" height="24" viewBox="0 0 26 28" fill="none" aria-hidden="true">
-                    <path d="M13 2L24 8.5V19.5L13 26L2 19.5V8.5L13 2Z" fill="#fff" stroke="#fff" stroke-width="0.5" opacity="0.9"/>
-                    <path d="M8 11L13 8L18 11V17L13 20L8 17V11Z" fill="#2979FF"/>
-                </svg>
-                <span>AZYVION</span>
-            </a>
+            <a href="#home" class="nav-logo footer-logo" aria-label="Azyvion — Inicio"><img class="wordmark-logo footer-wordmark" src="./azyvion-wordmark.png" alt="AZYVION"></a>
             <p>Construyendo tecnología inteligente con la que la gente puede crecer.</p>
         </div>
         <div class="footer-col">

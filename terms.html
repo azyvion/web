@@ -9,6 +9,8 @@
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#0B163D">
     <link rel="canonical" href="https://azyvion.pages.dev/terms.html">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="shortcut icon" href="./favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,6 +75,9 @@
         .legal-content a.inline-link { color: var(--color-secondary); text-decoration: underline; }
         .legal-back { display: inline-block; margin-bottom: 2.5rem; color: var(--color-secondary); font-weight: 500; text-decoration: none; }
         .legal-back:hover { text-decoration: underline; }
+        .nav-logo { max-width: 180px; overflow: hidden; flex-shrink: 0; }
+        .wordmark-logo { width: 148px; max-width: 100%; height: auto; max-height: 32px; object-fit: contain; display: block; }
+        @media (max-width: 480px) { .wordmark-logo { width: 118px; max-height: 26px; } .nav-logo { max-width: 135px; } }
     
         /* ---------------------------------------------------------
            COOKIE CONSENT BANNER
@@ -235,8 +240,8 @@
 
     <header class="site-header" id="siteHeader">
         <nav class="navbar container" aria-label="Primary">
-            <a href="index.html" class="nav-logo" aria-label="Azyvion — Home">
-                <span>AZYVION</span>
+            <a href="index.html" class="nav-logo" aria-label="Azyvion — Inicio">
+                <img class="wordmark-logo" src="./azyvion-wordmark.png" alt="AZYVION">
             </a>
             <a href="index.html#contact" class="btn btn-primary">Get Started</a>
         </nav>
