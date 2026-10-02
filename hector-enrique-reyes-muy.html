@@ -10,27 +10,33 @@
   <meta name="description" content="Conoce a Héctor Enrique Reyes Muy, CEO y fundador de Azyvion Technologies. Descubre su perfil profesional y su trabajo en el ámbito tecnológico.">
 
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://azyvion.tech/hector-reyes-muy.html">
+  <link rel="canonical" href="https://azyvion.tech/hector-enrique-reyes-muy.html">
 
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Héctor Enrique Reyes Muy | Azyvion Technologies">
+  <meta property="og:title" content="Héctor Enrique Reyes Muy | CEO y fundador de Azyvion Technologies">
   <meta property="og:description" content="Perfil oficial de Héctor Enrique Reyes Muy, CEO y fundador de Azyvion Technologies.">
-  <meta property="og:url" content="https://azyvion.tech/hector-reyes-muy.html">
+  <meta property="og:url" content="https://azyvion.tech/hector-enrique-reyes-muy.html">
   <meta property="og:image" content="https://azyvion.tech/hector.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Héctor Enrique Reyes Muy | Azyvion Technologies">
+  <meta name="twitter:description" content="CEO y fundador de Azyvion Technologies.">
+  <meta name="twitter:image" content="https://azyvion.tech/hector.jpg">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    "name": "Héctor Enrique Reyes Muy | Azyvion Technologies",
-    "url": "https://azyvion.tech/hector-reyes-muy.html",
+    "@id": "https://azyvion.tech/hector-enrique-reyes-muy.html#profile",
+    "url": "https://azyvion.tech/hector-enrique-reyes-muy.html",
+    "name": "Héctor Enrique Reyes Muy | CEO y fundador de Azyvion Technologies",
     "mainEntity": {
       "@type": "Person",
-      "@id": "https://azyvion.tech/hector-reyes-muy.html#person",
+      "@id": "https://azyvion.tech/hector-enrique-reyes-muy.html#person",
       "name": "Héctor Enrique Reyes Muy",
       "jobTitle": "CEO y fundador de Azyvion Technologies",
       "image": "https://azyvion.tech/hector.jpg",
-      "url": "https://azyvion.tech/hector-reyes-muy.html",
+      "url": "https://azyvion.tech/hector-enrique-reyes-muy.html",
       "sameAs": [
         "https://www.linkedin.com/in/hectorreyes2005/"
       ],
@@ -45,11 +51,13 @@
   </script>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #f4f7fb;
       color: #172033;
       line-height: 1.7;
@@ -61,7 +69,9 @@
       padding: 22px 20px;
     }
 
-    nav, main, footer {
+    nav,
+    main,
+    footer {
       max-width: 900px;
       margin: auto;
     }
@@ -70,6 +80,7 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      letter-spacing: 1px;
     }
 
     main {
@@ -83,7 +94,7 @@
       background: white;
       padding: 32px;
       border-radius: 18px;
-      box-shadow: 0 8px 30px #1720330d;
+      box-shadow: 0 8px 30px rgba(23, 32, 51, 0.06);
     }
 
     .profile img {
@@ -91,6 +102,7 @@
       height: 220px;
       object-fit: cover;
       border-radius: 14px;
+      flex-shrink: 0;
     }
 
     h1 {
@@ -99,12 +111,17 @@
       margin: 0 0 14px;
     }
 
-    h2 { margin-top: 36px; }
+    h2 {
+      margin-top: 36px;
+      color: #101c35;
+      line-height: 1.3;
+    }
 
     .role {
       color: #245bd6;
       font-weight: bold;
       font-size: 18px;
+      line-height: 1.5;
     }
 
     .button {
@@ -118,7 +135,14 @@
       font-weight: bold;
     }
 
-    .button:hover { background: #1947ad; }
+    .button:hover {
+      background: #1947ad;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #6ea8fe;
+      outline-offset: 3px;
+    }
 
     footer {
       padding: 25px 20px;
@@ -126,7 +150,10 @@
       font-size: 14px;
     }
 
-    footer a { color: #245bd6; }
+    footer a,
+    main section a:not(.button) {
+      color: #245bd6;
+    }
 
     @media (max-width: 600px) {
       .profile {
@@ -140,7 +167,9 @@
         height: 170px;
       }
 
-      main { padding: 25px 14px; }
+      main {
+        padding: 25px 14px;
+      }
     }
   </style>
 </head>
@@ -148,27 +177,35 @@
 <body>
   <header>
     <nav>
-      <a href="https://azyvion.tech/">AZYVION TECHNOLOGIES</a>
+      <a href="https://azyvion.tech/" aria-label="Azyvion Technologies, página principal">
+        AZYVION TECHNOLOGIES
+      </a>
     </nav>
   </header>
 
   <main>
     <article>
-      <section class="profile">
+      <section class="profile" aria-labelledby="profile-name">
         <img
           src="/hector.jpg"
           alt="Héctor Enrique Reyes Muy"
           width="190"
           height="220"
+          fetchpriority="high"
         >
 
         <div>
-          <h1>Héctor Enrique Reyes Muy</h1>
-          <p class="role">CEO y fundador de Azyvion Technologies</p>
+          <h1 id="profile-name">Héctor Enrique Reyes Muy</h1>
+
+          <p class="role">
+            CEO y fundador de Azyvion Technologies
+          </p>
+
           <p>
-            Fundador y director ejecutivo de Azyvion Technologies,
-            enfocado en impulsar la visión de la empresa y sus
-            iniciativas en el ámbito de la tecnología.
+            Héctor Enrique Reyes Muy es el fundador y CEO de
+            Azyvion Technologies. Desde su posición al frente
+            de la empresa, impulsa su visión, estrategia y
+            desarrollo de proyectos tecnológicos.
           </p>
 
           <a
@@ -176,28 +213,42 @@
             href="https://www.linkedin.com/in/hectorreyes2005/"
             target="_blank"
             rel="noopener noreferrer"
-          >Ver perfil de LinkedIn</a>
+          >
+            Ver perfil de LinkedIn
+          </a>
         </div>
       </section>
 
-      <section>
-        <h2>Perfil profesional</h2>
+      <section aria-labelledby="professional-profile">
+        <h2 id="professional-profile">Perfil profesional</h2>
+
         <p>
-          Héctor Enrique Reyes Muy es el fundador y CEO de
-          Azyvion Technologies. Desde esta posición, trabaja
-          en el desarrollo de la empresa, su estrategia y
-          sus proyectos tecnológicos.
+          Como fundador de Azyvion Technologies, Héctor Enrique
+          Reyes Muy participa en la dirección y desarrollo de
+          la empresa, con atención a la tecnología, la innovación
+          y la creación de soluciones digitales.
         </p>
 
-        <h2>Azyvion Technologies</h2>
+        <h2 id="leadership">Liderazgo y visión</h2>
+
+        <p>
+          Su labor como CEO se orienta a definir la visión
+          empresarial, impulsar los proyectos de la organización
+          y trabajar en su crecimiento y evolución tecnológica.
+        </p>
+
+        <h2 id="azyvion">Azyvion Technologies</h2>
+
         <p>
           Azyvion Technologies es la empresa fundada y dirigida
-          por Héctor Enrique Reyes Muy. Puedes conocer más
-          sobre la empresa y sus iniciativas en su sitio oficial.
+          por Héctor Enrique Reyes Muy. Para conocer más sobre
+          la empresa y sus iniciativas, visita el sitio oficial.
         </p>
 
         <p>
-          <a href="https://azyvion.tech/">Visitar azyvion.tech</a>
+          <a href="https://azyvion.tech/">
+            Visitar el sitio oficial de Azyvion Technologies
+          </a>
         </p>
       </section>
     </article>
