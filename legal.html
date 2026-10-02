@@ -1,54 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Aviso Legal — Azyvion</title>
-<meta name="description" content="Aviso legal de Azyvion. Información sobre el titular del sitio web, condiciones de uso y responsabilidad.">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0B163D">
-<link rel="canonical" href="https://azyvion.pages.dev/legal.html">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--color-primary:#0B163D;--color-secondary:#2979FF;--color-bg:#FFFFFF;--color-bg-alt:#F8FAFC;--color-text:#111827;--color-gray:#667085;--color-border:#E5E7EB;--font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;--container-w:760px;--header-h:72px;}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.7;-webkit-font-smoothing:antialiased;padding-top:env(safe-area-inset-top,0px);}
-a{color:var(--color-secondary);text-decoration:underline;}
-a:hover{color:#0B163D;}
-.site-header{height:var(--header-h);display:flex;align-items:center;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--color-border);position:sticky;top:0;z-index:100;}
-.navbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;max-width:var(--container-w);margin:auto;padding:0 2rem;}
-.nav-logo{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--color-primary);text-decoration:none;}
-.nav-back{font-size:.88rem;color:var(--color-secondary);font-weight:500;}
-.nav-back:hover{text-decoration:underline;}
-.prose{max-width:var(--container-w);margin:3rem auto 5rem;padding:0 2rem;}
-.prose h1{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);color:var(--color-primary);margin-bottom:.5rem;}
-.prose .meta{font-size:.85rem;color:var(--color-gray);margin-bottom:2.5rem;}
-.prose h2{font-family:var(--font-display);font-size:1.25rem;color:var(--color-primary);margin:2rem 0 .75rem;}
-.prose p{color:#374151;margin-bottom:1rem;}
-.prose ul{padding-left:1.4rem;margin-bottom:1rem;}
-.prose ul li{margin-bottom:.4rem;color:#374151;}
-.site-footer{background:var(--color-primary);color:rgba(255,255,255,.55);padding:1.5rem 2rem;text-align:center;font-size:.82rem;}
-.site-footer a{color:rgba(255,255,255,.75);text-decoration:underline;}
-@media(max-width:600px){.prose{padding:0 1.25rem;}.navbar{padding:0 1.25rem;}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Aviso Legal — Azyvion</title>
+    <meta name="description" content="Aviso legal de Azyvion. Información sobre el titular del sitio web, condiciones de uso y responsabilidad.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0B163D">
+    <link rel="canonical" href="https://azyvion.tech/legal.html">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        /* WORDMARK LOGO */
+    <style>
+        :root {
+            --color-primary: #0B163D;
+            --color-secondary: #2979FF;
+            --color-bg: #FFFFFF;
+            --color-text: #111827;
+            --color-gray: #667085;
+            --color-border: #E5E7EB;
+            --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+            --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            --fs-h1: clamp(2rem, 4vw, 3rem);
+            --fs-small: 0.875rem;
+            --space-2: 1rem; --space-3: 1.5rem; --space-4: 2rem; --space-5: 3rem;
+            --container-w: 1200px;
+            --radius-pill: 999px; --radius-sm: 10px;
+            --shadow-sm: 0 1px 2px rgba(11,22,61,0.06);
+            --shadow-md: 0 6px 20px rgba(11,22,61,0.08);
+            --dur-fast: 0.2s;
+            --ease-out: cubic-bezier(0.16,1,0.3,1);
+            --header-h: 80px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.7; -webkit-font-smoothing: antialiased; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { width: 100%; max-width: var(--container-w); margin-inline: auto; padding-inline: var(--space-4); }
+
+        /* HEADER */
+        .site-header { position: sticky; top: 0; left: 0; right: 0; z-index: 900; height: var(--header-h); display: flex; align-items: center; background: rgba(255,255,255,0.95); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--color-border); box-shadow: var(--shadow-sm); padding-top: env(safe-area-inset-top,0px); }
+        .navbar { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
+        .nav-logo { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-display); font-weight: 700; max-width: 180px; overflow: hidden; flex-shrink: 0; }
         .wordmark-logo { width: 148px; max-width: 100%; height: auto; max-height: 32px; object-fit: contain; display: block; }
         @media (max-width: 480px) { .wordmark-logo { width: 118px; max-height: 26px; } .nav-logo { max-width: 135px; } }
-        /* FOOTER GRID */
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-size: 0.86rem; font-weight: 600; padding: 0.65rem 1.3rem; border-radius: var(--radius-pill); white-space: nowrap; cursor: pointer; border: none; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast); }
+        .btn-primary { background: var(--color-primary); color: #fff; box-shadow: var(--shadow-sm); }
+        .btn-primary:hover { background: #0e1e52; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+        /* CONTENT */
+        .legal-main { padding: 4rem 0 5rem; }
+        .legal-content { max-width: 760px; margin: 0 auto; }
+        .legal-back { display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 2.5rem; color: var(--color-secondary); font-weight: 500; font-size: var(--fs-small); }
+        .legal-back:hover { text-decoration: underline; }
+        .legal-content h1 { font-family: var(--font-display); font-size: var(--fs-h1); color: var(--color-primary); margin-bottom: 0.4rem; }
+        .legal-updated { color: var(--color-gray); font-size: var(--fs-small); margin-bottom: 3rem; }
+        .legal-content h2 { font-family: var(--font-display); font-size: 1.2rem; color: var(--color-primary); margin: 2.5rem 0 0.75rem; }
+        .legal-content p, .legal-content li { color: #374151; line-height: 1.8; margin-bottom: 0.9rem; }
+        .legal-content ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+        .legal-content li { margin-bottom: 0.4rem; }
+        .inline-link { color: var(--color-secondary); text-decoration: underline; }
+        /* cookies table */
+        .cookie-table { width: 100%; border-collapse: collapse; margin: 1rem 0 2rem; font-size: 0.88rem; }
+        .cookie-table th, .cookie-table td { padding: 0.65rem 1rem; text-align: left; border-bottom: 1px solid var(--color-border); }
+        .cookie-table th { background: #F8FAFC; font-family: var(--font-display); font-weight: 600; color: var(--color-primary); }
+        .cookie-table td { color: #374151; }
+        .manage-btn { display: inline-block; margin-top: 0.5rem; padding: 0.55rem 1.2rem; background: var(--color-primary); color: #fff; border: none; border-radius: 999px; cursor: pointer; font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; }
+        .manage-btn:hover { background: #0e1e52; }
+
+        /* FOOTER */
+        .site-footer { background: var(--color-primary); color: rgba(255,255,255,0.72); padding-top: 3rem; }
         .footer-wordmark { filter: brightness(0) invert(1) !important; opacity: 1 !important; width: 148px; max-width: 100%; max-height: 32px; height: auto; }
         .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.12); }
-        .footer-brand p { margin-top: 1rem; max-width: 260px; font-size: 0.875rem; color: rgba(255,255,255,0.55); }
-        .footer-col h4 { color: #fff; font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+        .footer-brand p { margin-top: 1rem; max-width: 260px; font-size: var(--fs-small); color: rgba(255,255,255,0.55); }
+        .footer-col h4 { color: #fff; font-size: var(--fs-small); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
         .footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; list-style: none; padding: 0; }
-        .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+        .footer-col a { font-size: var(--fs-small); color: rgba(255,255,255,0.65); transition: color var(--dur-fast); }
         .footer-col a:hover { color: #fff; }
+        .footer-bottom { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem; padding-block: 1.5rem; font-size: var(--fs-small); color: rgba(255,255,255,0.45); text-align: center; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom,0px)); }
+        .footer-bottom a { color: rgba(255,255,255,0.65); text-decoration: underline; }
+        .footer-bottom a:hover { color: #fff; }
         @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
-        </style>
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } .legal-main { padding: 2.5rem 0 4rem; } }
+    </style>
 </head>
 <body>
 <header class="site-header" id="siteHeader">
@@ -59,50 +97,51 @@ a:hover{color:#0B163D;}
         <a href="index.html" class="btn btn-primary">Ir al inicio</a>
     </nav>
 </header>
-<main>
-<article class="prose">
-  <h1>Aviso Legal</h1>
-  <p class="meta">Última actualización: octubre de 2026</p>
+<main class="legal-main">
+    <div class="container legal-content">
+        <a href="index.html" class="legal-back">&larr; Volver a Azyvion</a>
+        <h1>Aviso Legal</h1>
+        <p class="legal-updated">Última actualización: 1 de octubre de 2026</p>
 
-  <h2>1. Titular del sitio web</h2>
-  <p>El presente sitio web <strong>azyvion.pages.dev</strong> es titularidad de <strong>Azyvion</strong>, empresa de tecnología fundada en 2026.</p>
-  <p><strong>CEO:</strong> Héctor Reyes<br>
-  <strong>Contacto:</strong> <a href="mailto:hello@azyvion.com">hello@azyvion.com</a><br>
-  <strong>País de operación principal:</strong> Guatemala</p>
+        <h2>1. Titular del sitio web</h2>
+        <p>El presente sitio web <strong>azyvion.tech</strong> es titularidad de <strong>Azyvion Technologies</strong>, empresa de tecnología con sede en Ciudad de Guatemala, Guatemala.</p>
+        <p><strong>CEO y Fundador:</strong> Héctor Enrique Reyes Muy<br>
+        <strong>Correo de contacto:</strong> <a class="inline-link" href="mailto:azyvion.tech@gmail.com">azyvion.tech@gmail.com</a><br>
+        <strong>País de operación principal:</strong> Guatemala</p>
 
-  <h2>2. Objeto</h2>
-  <p>El presente Aviso Legal regula el acceso y el uso del sitio web de Azyvion, así como los servicios ofrecidos a través del mismo: Azyvion AI, ATLAS y otros productos del ecosistema Azyvion.</p>
+        <h2>2. Objeto</h2>
+        <p>El presente Aviso Legal regula el acceso y el uso del sitio web de Azyvion Technologies, así como los servicios ofrecidos a través del mismo: Azyvion AI, ATLAS y otros productos del ecosistema Azyvion.</p>
 
-  <h2>3. Condiciones de uso</h2>
-  <p>El acceso y uso del sitio implica la aceptación plena de las presentes condiciones. El usuario se compromete a:</p>
-  <ul>
-    <li>Hacer un uso lícito y no fraudulento del sitio.</li>
-    <li>No reproducir, copiar ni distribuir contenido sin autorización expresa.</li>
-    <li>No realizar actos que puedan dañar, inutilizar o deteriorar el sitio o sus sistemas.</li>
-    <li>No intentar acceder a áreas restringidas o a los sistemas informáticos de Azyvion.</li>
-  </ul>
+        <h2>3. Condiciones de uso</h2>
+        <p>El acceso y uso del sitio implica la aceptación plena de las presentes condiciones. El usuario se compromete a:</p>
+        <ul>
+            <li>Hacer un uso lícito y no fraudulento del sitio.</li>
+            <li>No reproducir, copiar ni distribuir contenido sin autorización expresa.</li>
+            <li>No realizar actos que puedan dañar, inutilizar o deteriorar el sitio o sus sistemas.</li>
+            <li>No intentar acceder a áreas restringidas o a los sistemas informáticos de Azyvion.</li>
+        </ul>
 
-  <h2>4. Propiedad intelectual</h2>
-  <p>Todos los contenidos del sitio web (textos, imágenes, logotipos, código fuente, diseños, etc.) son propiedad de Azyvion o de sus licenciantes, y están protegidos por la legislación de propiedad intelectual e industrial aplicable. Queda expresamente prohibida su reproducción total o parcial sin consentimiento previo y escrito de Azyvion.</p>
+        <h2>4. Propiedad intelectual</h2>
+        <p>Todos los contenidos del sitio web (textos, imágenes, logotipos, código fuente, diseños, etc.) son propiedad de Azyvion Technologies o de sus licenciantes, y están protegidos por la legislación de propiedad intelectual e industrial aplicable. Queda expresamente prohibida su reproducción total o parcial sin consentimiento previo y escrito de Azyvion.</p>
 
-  <h2>5. Responsabilidad</h2>
-  <p>Azyvion no garantiza la disponibilidad continua del sitio y no se hace responsable de daños derivados de interrupciones del servicio, errores u omisiones en los contenidos, ni del uso que terceros hagan del sitio.</p>
-  <p>Los enlaces a sitios de terceros se facilitan únicamente con fines informativos. Azyvion no controla esos sitios ni asume responsabilidad por sus contenidos.</p>
+        <h2>5. Responsabilidad</h2>
+        <p>Azyvion no garantiza la disponibilidad continua del sitio y no se hace responsable de daños derivados de interrupciones del servicio, errores u omisiones en los contenidos, ni del uso que terceros hagan del sitio.</p>
+        <p>Los enlaces a sitios de terceros se facilitan únicamente con fines informativos. Azyvion no controla esos sitios ni asume responsabilidad por sus contenidos.</p>
 
-  <h2>6. Imágenes de perfil y contenido de usuarios</h2>
-  <p>Las imágenes de perfil y contenidos que los usuarios suban a través de los servicios de Azyvion (Azyvion AI, ATLAS, etc.) son responsabilidad exclusiva del usuario. El usuario garantiza que tiene los derechos necesarios sobre dicho contenido y que no infringe derechos de propiedad intelectual de terceros. Azyvion actúa como mero intermediario técnico y puede retirar contenido que infrinja derechos de autor o sea ilícito. Para notificaciones de infracción de derechos de autor, escribe a <a href="mailto:hello@azyvion.com">hello@azyvion.com</a>.</p>
+        <h2>6. Imágenes de perfil y contenido de usuarios</h2>
+        <p>Las imágenes de perfil y contenidos que los usuarios suban a través de los servicios de Azyvion son responsabilidad exclusiva del usuario. El usuario garantiza que tiene los derechos necesarios sobre dicho contenido y que no infringe derechos de propiedad intelectual de terceros. Azyvion actúa como mero intermediario técnico y puede retirar contenido que infrinja derechos de autor o sea ilícito. Para notificaciones de infracción de derechos de autor, escribe a <a class="inline-link" href="mailto:azyvion.tech@gmail.com">azyvion.tech@gmail.com</a>.</p>
 
-  <h2>7. Legislación aplicable</h2>
-  <p>Las presentes condiciones se rigen por la legislación vigente en Guatemala. Para cualquier controversia, las partes se someten a la jurisdicción de los tribunales competentes.</p>
+        <h2>7. Legislación aplicable</h2>
+        <p>Las presentes condiciones se rigen por la legislación vigente en la República de Guatemala. Para cualquier controversia, las partes se someten a la jurisdicción de los tribunales competentes de Ciudad de Guatemala.</p>
 
-  <h2>8. Contacto</h2>
-  <p>Para cualquier consulta legal, escribe a <a href="mailto:hello@azyvion.com">hello@azyvion.com</a>.</p>
-</article>
+        <h2>8. Contacto</h2>
+        <p>Para cualquier consulta legal, escribe a <a class="inline-link" href="mailto:azyvion.tech@gmail.com">azyvion.tech@gmail.com</a>.</p>
+    </div>
 </main>
 <footer class="site-footer">
     <div class="container footer-grid">
         <div class="footer-brand">
-            <a href="index.html" class="nav-logo footer-logo" aria-label="Azyvion — Inicio">
+            <a href="index.html" class="nav-logo" aria-label="Azyvion — Inicio">
                 <img class="wordmark-logo footer-wordmark" src="./azyvion-wordmark.png" alt="AZYVION">
             </a>
             <p>Construyendo tecnología inteligente con la que la gente puede crecer.</p>
@@ -134,14 +173,14 @@ a:hover{color:#0B163D;}
         </div>
     </div>
     <div class="container footer-bottom">
-        <p>&copy; <span id="year"></span> Azyvion Technologies · Ciudad de Guatemala, Guatemala</p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&copy; <span id="year"></span> Azyvion Technologies &middot; Ciudad de Guatemala, Guatemala</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="privacy.html">Privacidad</a></p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="terms.html">Términos</a></p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="cookies.html">Cookies</a></p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="legal.html">Aviso Legal</a></p>
     </div>
 </footer>

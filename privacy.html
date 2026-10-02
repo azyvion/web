@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — Azyvion</title>
-    <meta name="description" content="Azyvion's Privacy Policy: what information we collect, how we use it, and your rights.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Política de Privacidad — Azyvion</title>
+    <meta name="description" content="Política de Privacidad de Azyvion: qué información recopilamos, cómo la usamos y tus derechos.">
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#0B163D">
-    <link rel="canonical" href="https://azyvion.pages.dev/privacy.html">
-
+    <link rel="canonical" href="https://azyvion.tech/privacy.html">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="shortcut icon" href="./favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-
         :root {
             --color-primary: #0B163D;
             --color-secondary: #2979FF;
@@ -23,233 +22,74 @@
             --color-text: #111827;
             --color-gray: #667085;
             --color-border: #E5E7EB;
-            --color-secondary-08: rgba(41, 121, 255, 0.08);
             --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
             --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-            --fs-h1: clamp(2.25rem, 4vw, 3.5rem);
+            --fs-h1: clamp(2rem, 4vw, 3rem);
             --fs-small: 0.875rem;
-            --space-2: 1rem;
-            --space-3: 1.5rem;
-            --space-4: 2rem;
+            --space-2: 1rem; --space-3: 1.5rem; --space-4: 2rem; --space-5: 3rem;
             --container-w: 1200px;
-            --radius-pill: 999px;
-            --radius-sm: 10px;
-            --shadow-sm: 0 1px 2px rgba(11, 22, 61, 0.06);
+            --radius-pill: 999px; --radius-sm: 10px;
+            --shadow-sm: 0 1px 2px rgba(11,22,61,0.06);
+            --shadow-md: 0 6px 20px rgba(11,22,61,0.08);
             --dur-fast: 0.2s;
-            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-            --header-h: 84px;
+            --ease-out: cubic-bezier(0.16,1,0.3,1);
+            --header-h: 80px;
         }
-
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.7; -webkit-font-smoothing: antialiased; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
         a { color: inherit; text-decoration: none; }
-
-        .skip-link { position: fixed; top: -60px; left: var(--space-3); z-index: 1000; background: var(--color-primary); color: #fff; padding: 0.75rem 1.25rem; border-radius: var(--radius-sm); transition: top var(--dur-fast) var(--ease-out); }
-        .skip-link:focus { top: var(--space-2); }
-
+        img { max-width: 100%; height: auto; display: block; }
         .container { width: 100%; max-width: var(--container-w); margin-inline: auto; padding-inline: var(--space-4); }
 
-        .btn { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; padding: 0.7rem 1.35rem; border-radius: var(--radius-pill); white-space: nowrap; transition: transform var(--dur-fast) var(--ease-out); }
-        .btn-primary { background: var(--color-primary); color: #fff; box-shadow: var(--shadow-sm); }
-        .btn-primary:hover { background: #0d1c4a; transform: translateY(-2px); }
-
-        .site-header { height: var(--header-h); display: flex; align-items: center; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--color-border); }
-        .navbar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
-        .nav-logo { display: inline-flex; align-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.04em; color: var(--color-primary); }
-
-        .site-footer { background: var(--color-primary); color: rgba(255, 255, 255, 0.72); }
-        .footer-bottom { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; padding-block: var(--space-3); font-size: var(--fs-small); color: rgba(255, 255, 255, 0.45); text-align: center; }
-        .footer-bottom a { color: rgba(255, 255, 255, 0.65); text-decoration: underline; }
-        .footer-bottom a:hover { color: #fff; }
-
-        .legal-main { padding: 6.5rem 0 5rem; }
-        .legal-content { max-width: 760px; margin: 0 auto; }
-        .legal-content h1 { font-family: var(--font-display); font-size: var(--fs-h1); color: var(--color-primary); margin-bottom: .5rem; }
-        .legal-updated { color: var(--color-gray); font-size: var(--fs-small); margin-bottom: 3rem; }
-        .legal-content h2 { font-family: var(--font-display); font-size: 1.5rem; color: var(--color-primary); margin: 2.5rem 0 1rem; }
-        .legal-content p, .legal-content li { color: var(--color-text); line-height: 1.75; margin-bottom: 1rem; }
-        .legal-content ul { padding-left: 1.25rem; }
-        .legal-content a.inline-link { color: var(--color-secondary); text-decoration: underline; }
-        .legal-back { display: inline-block; margin-bottom: 2.5rem; color: var(--color-secondary); font-weight: 500; text-decoration: none; }
-        .legal-back:hover { text-decoration: underline; }
-    
-        /* ---------------------------------------------------------
-           COOKIE CONSENT BANNER
-           --------------------------------------------------------- */
-
-        .cookie-banner {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 2000;
-            background: var(--color-primary);
-            color: rgba(255, 255, 255, 0.88);
-            padding: 1.25rem var(--space-4);
-            transform: translateY(100%);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 -8px 24px rgba(11, 22, 61, 0.18);
-        }
-
-        .cookie-banner.visible {
-            transform: translateY(0);
-        }
-
-        .cookie-banner-inner {
-            max-width: var(--container-w);
-            margin-inline: auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem 1.5rem;
-        }
-
-        .cookie-banner-text {
-            flex: 1 1 380px;
-            font-size: 0.9rem;
-            line-height: 1.55;
-        }
-
-        .cookie-banner-text a {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        .cookie-banner-actions {
-            display: flex;
-            gap: 0.75rem;
-            flex-shrink: 0;
-        }
-
-        .cookie-btn {
-            font-family: var(--font-display, inherit);
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 0.65rem 1.25rem;
-            border-radius: 999px;
-            cursor: pointer;
-            white-space: nowrap;
-            border: none;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-        }
-
-        .cookie-btn:hover {
-            transform: translateY(-1px);
-        }
-
-        .cookie-btn-decline {
-            background: transparent;
-            color: rgba(255, 255, 255, 0.85);
-            border: 1.5px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .cookie-btn-accept {
-            background: #fff;
-            color: var(--color-primary);
-        }
-
-        @media (max-width: 560px) {
-            .cookie-banner-actions {
-                width: 100%;
-                justify-content: flex-start;
-            }
-        }
-
-    
-        /* ---------------------------------------------------------
-           WHATSAPP FLOATING BUTTON
-           --------------------------------------------------------- */
-
-        .whatsapp-float {
-            position: fixed;
-            right: 1.5rem;
-            bottom: 1.5rem;
-            z-index: 1500;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: #25D366;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 2px 8px rgba(11, 22, 61, 0.15);
-            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5), 0 4px 12px rgba(11, 22, 61, 0.2);
-        }
-
-        .whatsapp-float svg {
-            width: 30px;
-            height: 30px;
-        }
-
-        .whatsapp-tooltip {
-            position: absolute;
-            right: 68px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--color-primary);
-            color: #fff;
-            font-family: var(--font-body, inherit);
-            font-size: 0.82rem;
-            font-weight: 500;
-            padding: 0.5rem 0.9rem;
-            border-radius: 8px;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-        }
-
-        .whatsapp-float:hover .whatsapp-tooltip {
-            opacity: 1;
-            transform: translateY(-50%) translateX(-4px);
-        }
-
-        @media (max-width: 560px) {
-            .whatsapp-float {
-                right: 1rem;
-                bottom: 1rem;
-                width: 52px;
-                height: 52px;
-            }
-            .whatsapp-float svg {
-                width: 26px;
-                height: 26px;
-            }
-            .whatsapp-tooltip {
-                display: none;
-            }
-        }
-
-    
-        /* WORDMARK LOGO */
+        /* HEADER */
+        .site-header { position: sticky; top: 0; left: 0; right: 0; z-index: 900; height: var(--header-h); display: flex; align-items: center; background: rgba(255,255,255,0.95); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--color-border); box-shadow: var(--shadow-sm); padding-top: env(safe-area-inset-top,0px); }
+        .navbar { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
+        .nav-logo { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-display); font-weight: 700; max-width: 180px; overflow: hidden; flex-shrink: 0; }
         .wordmark-logo { width: 148px; max-width: 100%; height: auto; max-height: 32px; object-fit: contain; display: block; }
         @media (max-width: 480px) { .wordmark-logo { width: 118px; max-height: 26px; } .nav-logo { max-width: 135px; } }
-        /* FOOTER GRID */
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-size: 0.86rem; font-weight: 600; padding: 0.65rem 1.3rem; border-radius: var(--radius-pill); white-space: nowrap; cursor: pointer; border: none; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast); }
+        .btn-primary { background: var(--color-primary); color: #fff; box-shadow: var(--shadow-sm); }
+        .btn-primary:hover { background: #0e1e52; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+        /* CONTENT */
+        .legal-main { padding: 4rem 0 5rem; }
+        .legal-content { max-width: 760px; margin: 0 auto; }
+        .legal-back { display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 2.5rem; color: var(--color-secondary); font-weight: 500; font-size: var(--fs-small); }
+        .legal-back:hover { text-decoration: underline; }
+        .legal-content h1 { font-family: var(--font-display); font-size: var(--fs-h1); color: var(--color-primary); margin-bottom: 0.4rem; }
+        .legal-updated { color: var(--color-gray); font-size: var(--fs-small); margin-bottom: 3rem; }
+        .legal-content h2 { font-family: var(--font-display); font-size: 1.2rem; color: var(--color-primary); margin: 2.5rem 0 0.75rem; }
+        .legal-content p, .legal-content li { color: #374151; line-height: 1.8; margin-bottom: 0.9rem; }
+        .legal-content ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+        .legal-content li { margin-bottom: 0.4rem; }
+        .inline-link { color: var(--color-secondary); text-decoration: underline; }
+        /* cookies table */
+        .cookie-table { width: 100%; border-collapse: collapse; margin: 1rem 0 2rem; font-size: 0.88rem; }
+        .cookie-table th, .cookie-table td { padding: 0.65rem 1rem; text-align: left; border-bottom: 1px solid var(--color-border); }
+        .cookie-table th { background: #F8FAFC; font-family: var(--font-display); font-weight: 600; color: var(--color-primary); }
+        .cookie-table td { color: #374151; }
+        .manage-btn { display: inline-block; margin-top: 0.5rem; padding: 0.55rem 1.2rem; background: var(--color-primary); color: #fff; border: none; border-radius: 999px; cursor: pointer; font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; }
+        .manage-btn:hover { background: #0e1e52; }
+
+        /* FOOTER */
+        .site-footer { background: var(--color-primary); color: rgba(255,255,255,0.72); padding-top: 3rem; }
         .footer-wordmark { filter: brightness(0) invert(1) !important; opacity: 1 !important; width: 148px; max-width: 100%; max-height: 32px; height: auto; }
         .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.12); }
-        .footer-brand p { margin-top: 1rem; max-width: 260px; font-size: 0.875rem; color: rgba(255,255,255,0.55); }
-        .footer-col h4 { color: #fff; font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+        .footer-brand p { margin-top: 1rem; max-width: 260px; font-size: var(--fs-small); color: rgba(255,255,255,0.55); }
+        .footer-col h4 { color: #fff; font-size: var(--fs-small); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
         .footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; list-style: none; padding: 0; }
-        .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+        .footer-col a { font-size: var(--fs-small); color: rgba(255,255,255,0.65); transition: color var(--dur-fast); }
         .footer-col a:hover { color: #fff; }
+        .footer-bottom { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem; padding-block: 1.5rem; font-size: var(--fs-small); color: rgba(255,255,255,0.45); text-align: center; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom,0px)); }
+        .footer-bottom a { color: rgba(255,255,255,0.65); text-decoration: underline; }
+        .footer-bottom a:hover { color: #fff; }
         @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
-        </style>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="shortcut icon" href="./favicon.ico">
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } .legal-main { padding: 2.5rem 0 4rem; } }
+    </style>
 </head>
 <body>
-
-    <a href="index.html#main" class="skip-link">Skip to content</a>
-
-    <header class="site-header" id="siteHeader">
+<header class="site-header" id="siteHeader">
     <nav class="navbar container" aria-label="Navegación principal">
         <a href="index.html" class="nav-logo" aria-label="Azyvion Technologies — Inicio">
             <img class="wordmark-logo" src="./azyvion-wordmark.png" alt="AZYVION">
@@ -257,66 +97,61 @@
         <a href="index.html" class="btn btn-primary">Ir al inicio</a>
     </nav>
 </header>
+<main class="legal-main">
+    <div class="container legal-content">
+        <a href="index.html" class="legal-back">&larr; Volver a Azyvion</a>
+        <h1>Política de Privacidad</h1>
+        <p class="legal-updated">Última actualización: 1 de octubre de 2026</p>
 
-    <main id="main" class="legal-main">
-        <div class="container legal-content">
+        <p>Esta Política de Privacidad explica cómo Azyvion Technologies (&ldquo;Azyvion&rdquo;, &ldquo;nosotros&rdquo; o &ldquo;nuestro&rdquo;) recopila, usa y protege la información cuando visitas nuestro sitio web o nos contactas. Al usar este sitio, aceptas las prácticas descritas a continuación.</p>
 
-            <a href="index.html" class="legal-back">&larr; Back to Azyvion</a>
+        <h2>1. Información que recopilamos</h2>
+        <p>Recopilamos información de las siguientes maneras:</p>
+        <ul>
+            <li><strong>Información que proporcionas directamente:</strong> cuando completas nuestro formulario de contacto, recopilamos tu nombre, correo electrónico, el asunto que seleccionas y el mensaje que nos envías.</li>
+            <li><strong>Información recopilada automáticamente:</strong> cuando visitas nuestro sitio, podemos recopilar datos técnicos estándar como el tipo de navegador, tipo de dispositivo, páginas visitadas y ubicación aproximada, generalmente a través de herramientas de analítica.</li>
+            <li><strong>Cookies:</strong> usamos cookies y tecnologías similares para entender cómo los visitantes usan nuestro sitio y mejorar su rendimiento. Consulta la sección 4 para más detalles.</li>
+        </ul>
 
-            <h1>Privacy Policy</h1>
-            <p class="legal-updated">Last updated: August 6, 2026</p>
+        <h2>2. Cómo usamos tu información</h2>
+        <p>Usamos la información recopilada para:</p>
+        <ul>
+            <li>Responder a las consultas enviadas a través de nuestro formulario de contacto.</li>
+            <li>Entender cómo los visitantes interactúan con nuestro sitio y mejorarlo.</li>
+            <li>Comunicarnos contigo sobre nuestros productos, servicios u oportunidades de colaboración.</li>
+            <li>Mantener la seguridad y el correcto funcionamiento del sitio web.</li>
+        </ul>
+        <p>No vendemos tu información personal a terceros.</p>
 
-            <p>This Privacy Policy explains how Azyvion ("Azyvion", "we", "us", or "our") collects, uses, and protects information when you visit our website or contact us. By using this site, you agree to the practices described below.</p>
+        <h2>3. Cómo compartimos la información</h2>
+        <p>Podemos compartir información con proveedores de servicios de confianza que nos ayudan a operar nuestro sitio y analizar su uso (por ejemplo, proveedores de analítica). Estos proveedores solo pueden usar tu información para realizar servicios en nuestro nombre. También podemos divulgar información si la ley lo requiere o para proteger nuestros derechos.</p>
 
-            <h2>1. Information We Collect</h2>
-            <p>We collect information in the following ways:</p>
-            <ul>
-                <li><strong>Information you provide directly:</strong> When you fill out our contact form, we collect your name, email address, the subject you select, and the message you send us.</li>
-                <li><strong>Automatically collected information:</strong> When you visit our site, we may collect standard technical data such as your browser type, device type, pages visited, and approximate location, typically through analytics tools like Google Analytics.</li>
-                <li><strong>Cookies:</strong> We use cookies and similar technologies to understand how visitors use our site and to improve its performance. See Section 4 below for more detail.</li>
-            </ul>
+        <h2>4. Cookies y analítica</h2>
+        <p>Usamos cookies para habilitar las funcionalidades esenciales del sitio y recopilar analítica agregada sobre cómo los visitantes lo usan. Esto puede incluir herramientas como Google Analytics 4, que usa cookies para recopilar información estándar del registro de internet y el comportamiento de los visitantes de forma anónima. Puedes controlar o deshabilitar las cookies desde la configuración de tu navegador; ten en cuenta que algunas partes del sitio pueden no funcionar correctamente si las cookies están deshabilitadas.</p>
 
-            <h2>2. How We Use Your Information</h2>
-            <p>We use the information we collect to:</p>
-            <ul>
-                <li>Respond to inquiries submitted through our contact form.</li>
-                <li>Understand how visitors interact with our site so we can improve it.</li>
-                <li>Communicate with you about our products, services, or partnership opportunities, where relevant.</li>
-                <li>Maintain the security and proper functioning of our website.</li>
-            </ul>
-            <p>We do not sell your personal information to third parties.</p>
+        <h2>5. Conservación de datos</h2>
+        <p>Conservamos la información personal únicamente durante el tiempo necesario para cumplir los propósitos descritos en esta política, salvo que la ley exija un período de conservación mayor.</p>
 
-            <h2>3. How We Share Information</h2>
-            <p>We may share information with trusted third-party service providers who help us operate our website and analyze its usage (for example, analytics providers). These providers are only permitted to use your information to perform services on our behalf. We may also disclose information if required by law or to protect our rights.</p>
+        <h2>6. Tus derechos</h2>
+        <p>Dependiendo de tu ubicación, puedes tener derecho a acceder, corregir, eliminar o restringir el uso de tu información personal. Para ejercer cualquiera de estos derechos, contáctanos en los datos indicados a continuación.</p>
 
-            <h2>4. Cookies and Analytics</h2>
-            <p>We use cookies to enable core site functionality and to gather aggregated analytics about how visitors use Azyvion.com. This may include tools such as Google Analytics, which uses cookies to collect standard internet log information and visitor behavior in an anonymous form. You can control or disable cookies through your browser settings; note that some parts of the site may not function properly if cookies are disabled.</p>
+        <h2>7. Seguridad de los datos</h2>
+        <p>Aplicamos medidas técnicas y organizativas razonables para proteger la información que recopilamos. Sin embargo, ningún método de transmisión por internet es completamente seguro y no podemos garantizar una seguridad absoluta.</p>
 
-            <h2>5. Data Retention</h2>
-            <p>We retain personal information only for as long as necessary to fulfill the purposes described in this policy, unless a longer retention period is required by law.</p>
+        <h2>8. Privacidad de menores</h2>
+        <p>Nuestro sitio web no está dirigido a menores de edad y no recopilamos intencionalmente información personal de menores.</p>
 
-            <h2>6. Your Rights</h2>
-            <p>Depending on your location, you may have the right to access, correct, delete, or restrict the use of your personal information. To exercise any of these rights, contact us using the details below.</p>
+        <h2>9. Cambios en esta política</h2>
+        <p>Podemos actualizar esta Política de Privacidad en cualquier momento. Los cambios se publicarán en esta página con una fecha de revisión actualizada.</p>
 
-            <h2>7. Data Security</h2>
-            <p>We take reasonable technical and organizational measures to protect the information we collect. However, no method of transmission over the internet is completely secure, and we cannot guarantee absolute security.</p>
-
-            <h2>8. Children's Privacy</h2>
-            <p>Our website is not directed at children, and we do not knowingly collect personal information from children.</p>
-
-            <h2>9. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
-
-            <h2>10. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy or how we handle your information, please contact us at <a class="inline-link" href="mailto:azyvion.tech@gmail.com">azyvion.tech@gmail.com</a>.</p>
-
-        </div>
-    </main>
-
-    <footer class="site-footer">
+        <h2>10. Contáctanos</h2>
+        <p>Si tienes alguna pregunta sobre esta Política de Privacidad o sobre cómo manejamos tu información, contáctanos en <a class="inline-link" href="mailto:azyvion.tech@gmail.com">azyvion.tech@gmail.com</a>.</p>
+    </div>
+</main>
+<footer class="site-footer">
     <div class="container footer-grid">
         <div class="footer-brand">
-            <a href="index.html" class="nav-logo footer-logo" aria-label="Azyvion — Inicio">
+            <a href="index.html" class="nav-logo" aria-label="Azyvion — Inicio">
                 <img class="wordmark-logo footer-wordmark" src="./azyvion-wordmark.png" alt="AZYVION">
             </a>
             <p>Construyendo tecnología inteligente con la que la gente puede crecer.</p>
@@ -348,121 +183,17 @@
         </div>
     </div>
     <div class="container footer-bottom">
-        <p>&copy; <span id="year"></span> Azyvion Technologies · Ciudad de Guatemala, Guatemala</p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&copy; <span id="year"></span> Azyvion Technologies &middot; Ciudad de Guatemala, Guatemala</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="privacy.html">Privacidad</a></p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="terms.html">Términos</a></p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="cookies.html">Cookies</a></p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="legal.html">Aviso Legal</a></p>
     </div>
 </footer>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-
-
-
-    <!-- ========================================= -->
-    <!-- WHATSAPP FLOATING BUTTON -->
-    <!-- ========================================= -->
-
-    <a
-        href="https://wa.me/50255630559?text=Hola%20Azyvion%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n"
-        class="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with Azyvion on WhatsApp"
-    >
-        <span class="whatsapp-tooltip">Chat with us</span>
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 3C7.03 3 3 7.03 3 12c0 1.77.5 3.42 1.37 4.83L3 21l4.3-1.34A8.93 8.93 0 0 0 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9Z" fill="#fff"/>
-            <path d="M9.1 8.2c-.2-.45-.42-.46-.62-.47h-.53c-.18 0-.48.07-.73.35-.25.28-.96.93-.96 2.27s.98 2.64 1.12 2.82c.14.18 1.9 3 4.65 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.12-.25-.19-.53-.33-.28-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.6.14-.18.28-.7.88-.86 1.06-.16.18-.31.2-.59.07-.28-.14-1.17-.43-2.23-1.38-.83-.74-1.38-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.5-.07-.14-.6-1.5-.85-2.05Z" fill="#25D366"/>
-        </svg>
-    </a>
-
-    <!-- ========================================= -->
-    <!-- COOKIE CONSENT BANNER -->
-    <!-- ========================================= -->
-
-    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-        <div class="cookie-banner-inner">
-            <p class="cookie-banner-text">
-                We use cookies to understand how visitors use Azyvion and to improve your experience. See our
-                <a href="privacy.html">Privacy Policy</a> for details.
-            </p>
-            <div class="cookie-banner-actions">
-                <button type="button" class="cookie-btn cookie-btn-decline" id="cookieDecline">Decline</button>
-                <button type="button" class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-    (function () {
-        var CONSENT_KEY = 'azyvion_cookie_consent';
-        var banner = document.getElementById('cookieBanner');
-        var acceptBtn = document.getElementById('cookieAccept');
-        var declineBtn = document.getElementById('cookieDecline');
-
-        // --- Google Analytics (GA4) ---
-        // Replace G-XXXXXXXXXX with your real Measurement ID once you have one.
-        // Analytics only loads if the visitor has accepted cookies.
-        var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
-
-        function loadAnalytics() {
-            if (GA_MEASUREMENT_ID.indexOf('XXXX') !== -1) return; // placeholder not replaced yet
-            if (window.__azyvionAnalyticsLoaded) return;
-            window.__azyvionAnalyticsLoaded = true;
-
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
-            document.head.appendChild(script);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { window.dataLayer.push(arguments); }
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
-        }
-
-        function showBanner() {
-            requestAnimationFrame(function () {
-                banner.classList.add('visible');
-            });
-        }
-
-        function hideBanner() {
-            banner.classList.remove('visible');
-        }
-
-        var consent = null;
-        try {
-            consent = localStorage.getItem(CONSENT_KEY);
-        } catch (e) {
-            consent = null;
-        }
-
-        if (consent === 'accepted') {
-            loadAnalytics();
-        } else if (consent !== 'declined') {
-            showBanner();
-        }
-
-        acceptBtn.addEventListener('click', function () {
-            try { localStorage.setItem(CONSENT_KEY, 'accepted'); } catch (e) {}
-            loadAnalytics();
-            hideBanner();
-        });
-
-        declineBtn.addEventListener('click', function () {
-            try { localStorage.setItem(CONSENT_KEY, 'declined'); } catch (e) {}
-            hideBanner();
-        });
-    })();
-    </script>
-
-
 </body>
 </html>

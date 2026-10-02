@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service — Azyvion</title>
-    <meta name="description" content="Azyvion's Terms of Service: the rules that govern your use of our website and services.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Términos de Servicio — Azyvion</title>
+    <meta name="description" content="Términos de Servicio de Azyvion: las reglas que rigen el uso de nuestro sitio web y servicios.">
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#0B163D">
-    <link rel="canonical" href="https://azyvion.pages.dev/terms.html">
+    <link rel="canonical" href="https://azyvion.tech/terms.html">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="shortcut icon" href="./favicon.ico">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-
         :root {
             --color-primary: #0B163D;
             --color-secondary: #2979FF;
@@ -25,234 +22,74 @@
             --color-text: #111827;
             --color-gray: #667085;
             --color-border: #E5E7EB;
-            --color-secondary-08: rgba(41, 121, 255, 0.08);
             --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
             --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-            --fs-h1: clamp(2.25rem, 4vw, 3.5rem);
+            --fs-h1: clamp(2rem, 4vw, 3rem);
             --fs-small: 0.875rem;
-            --space-2: 1rem;
-            --space-3: 1.5rem;
-            --space-4: 2rem;
+            --space-2: 1rem; --space-3: 1.5rem; --space-4: 2rem; --space-5: 3rem;
             --container-w: 1200px;
-            --radius-pill: 999px;
-            --radius-sm: 10px;
-            --shadow-sm: 0 1px 2px rgba(11, 22, 61, 0.06);
+            --radius-pill: 999px; --radius-sm: 10px;
+            --shadow-sm: 0 1px 2px rgba(11,22,61,0.06);
+            --shadow-md: 0 6px 20px rgba(11,22,61,0.08);
             --dur-fast: 0.2s;
-            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-            --header-h: 84px;
+            --ease-out: cubic-bezier(0.16,1,0.3,1);
+            --header-h: 80px;
         }
-
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.7; -webkit-font-smoothing: antialiased; padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
         a { color: inherit; text-decoration: none; }
-
-        .skip-link { position: fixed; top: -60px; left: var(--space-3); z-index: 1000; background: var(--color-primary); color: #fff; padding: 0.75rem 1.25rem; border-radius: var(--radius-sm); transition: top var(--dur-fast) var(--ease-out); }
-        .skip-link:focus { top: var(--space-2); }
-
+        img { max-width: 100%; height: auto; display: block; }
         .container { width: 100%; max-width: var(--container-w); margin-inline: auto; padding-inline: var(--space-4); }
 
-        .btn { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; padding: 0.7rem 1.35rem; border-radius: var(--radius-pill); white-space: nowrap; transition: transform var(--dur-fast) var(--ease-out); }
+        /* HEADER */
+        .site-header { position: sticky; top: 0; left: 0; right: 0; z-index: 900; height: var(--header-h); display: flex; align-items: center; background: rgba(255,255,255,0.95); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--color-border); box-shadow: var(--shadow-sm); padding-top: env(safe-area-inset-top,0px); }
+        .navbar { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
+        .nav-logo { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-display); font-weight: 700; max-width: 180px; overflow: hidden; flex-shrink: 0; }
+        .wordmark-logo { width: 148px; max-width: 100%; height: auto; max-height: 32px; object-fit: contain; display: block; }
+        @media (max-width: 480px) { .wordmark-logo { width: 118px; max-height: 26px; } .nav-logo { max-width: 135px; } }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-size: 0.86rem; font-weight: 600; padding: 0.65rem 1.3rem; border-radius: var(--radius-pill); white-space: nowrap; cursor: pointer; border: none; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast); }
         .btn-primary { background: var(--color-primary); color: #fff; box-shadow: var(--shadow-sm); }
-        .btn-primary:hover { background: #0d1c4a; transform: translateY(-2px); }
+        .btn-primary:hover { background: #0e1e52; transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
-        .site-header { height: var(--header-h); display: flex; align-items: center; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--color-border); }
-        .navbar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
-        .nav-logo { display: inline-flex; align-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.04em; color: var(--color-primary); }
-
-        .site-footer { background: var(--color-primary); color: rgba(255, 255, 255, 0.72); }
-        .footer-bottom { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; padding-block: var(--space-3); font-size: var(--fs-small); color: rgba(255, 255, 255, 0.45); text-align: center; }
-        .footer-bottom a { color: rgba(255, 255, 255, 0.65); text-decoration: underline; }
-        .footer-bottom a:hover { color: #fff; }
-
-        .legal-main { padding: 6.5rem 0 5rem; }
+        /* CONTENT */
+        .legal-main { padding: 4rem 0 5rem; }
         .legal-content { max-width: 760px; margin: 0 auto; }
-        .legal-content h1 { font-family: var(--font-display); font-size: var(--fs-h1); color: var(--color-primary); margin-bottom: .5rem; }
-        .legal-updated { color: var(--color-gray); font-size: var(--fs-small); margin-bottom: 3rem; }
-        .legal-content h2 { font-family: var(--font-display); font-size: 1.5rem; color: var(--color-primary); margin: 2.5rem 0 1rem; }
-        .legal-content p, .legal-content li { color: var(--color-text); line-height: 1.75; margin-bottom: 1rem; }
-        .legal-content ul { padding-left: 1.25rem; }
-        .legal-content a.inline-link { color: var(--color-secondary); text-decoration: underline; }
-        .legal-back { display: inline-block; margin-bottom: 2.5rem; color: var(--color-secondary); font-weight: 500; text-decoration: none; }
+        .legal-back { display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 2.5rem; color: var(--color-secondary); font-weight: 500; font-size: var(--fs-small); }
         .legal-back:hover { text-decoration: underline; }
-        .nav-logo { max-width: 180px; overflow: hidden; flex-shrink: 0; }
-        .wordmark-logo { width: 148px; max-width: 100%; height: auto; max-height: 32px; object-fit: contain; display: block; }
-        @media (max-width: 480px) { .wordmark-logo { width: 118px; max-height: 26px; } .nav-logo { max-width: 135px; } }
-    
-        /* ---------------------------------------------------------
-           COOKIE CONSENT BANNER
-           --------------------------------------------------------- */
+        .legal-content h1 { font-family: var(--font-display); font-size: var(--fs-h1); color: var(--color-primary); margin-bottom: 0.4rem; }
+        .legal-updated { color: var(--color-gray); font-size: var(--fs-small); margin-bottom: 3rem; }
+        .legal-content h2 { font-family: var(--font-display); font-size: 1.2rem; color: var(--color-primary); margin: 2.5rem 0 0.75rem; }
+        .legal-content p, .legal-content li { color: #374151; line-height: 1.8; margin-bottom: 0.9rem; }
+        .legal-content ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+        .legal-content li { margin-bottom: 0.4rem; }
+        .inline-link { color: var(--color-secondary); text-decoration: underline; }
+        /* cookies table */
+        .cookie-table { width: 100%; border-collapse: collapse; margin: 1rem 0 2rem; font-size: 0.88rem; }
+        .cookie-table th, .cookie-table td { padding: 0.65rem 1rem; text-align: left; border-bottom: 1px solid var(--color-border); }
+        .cookie-table th { background: #F8FAFC; font-family: var(--font-display); font-weight: 600; color: var(--color-primary); }
+        .cookie-table td { color: #374151; }
+        .manage-btn { display: inline-block; margin-top: 0.5rem; padding: 0.55rem 1.2rem; background: var(--color-primary); color: #fff; border: none; border-radius: 999px; cursor: pointer; font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; }
+        .manage-btn:hover { background: #0e1e52; }
 
-        .cookie-banner {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 2000;
-            background: var(--color-primary);
-            color: rgba(255, 255, 255, 0.88);
-            padding: 1.25rem var(--space-4);
-            transform: translateY(100%);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 -8px 24px rgba(11, 22, 61, 0.18);
-        }
-
-        .cookie-banner.visible {
-            transform: translateY(0);
-        }
-
-        .cookie-banner-inner {
-            max-width: var(--container-w);
-            margin-inline: auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem 1.5rem;
-        }
-
-        .cookie-banner-text {
-            flex: 1 1 380px;
-            font-size: 0.9rem;
-            line-height: 1.55;
-        }
-
-        .cookie-banner-text a {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        .cookie-banner-actions {
-            display: flex;
-            gap: 0.75rem;
-            flex-shrink: 0;
-        }
-
-        .cookie-btn {
-            font-family: var(--font-display, inherit);
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 0.65rem 1.25rem;
-            border-radius: 999px;
-            cursor: pointer;
-            white-space: nowrap;
-            border: none;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-        }
-
-        .cookie-btn:hover {
-            transform: translateY(-1px);
-        }
-
-        .cookie-btn-decline {
-            background: transparent;
-            color: rgba(255, 255, 255, 0.85);
-            border: 1.5px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .cookie-btn-accept {
-            background: #fff;
-            color: var(--color-primary);
-        }
-
-        @media (max-width: 560px) {
-            .cookie-banner-actions {
-                width: 100%;
-                justify-content: flex-start;
-            }
-        }
-
-    
-        /* ---------------------------------------------------------
-           WHATSAPP FLOATING BUTTON
-           --------------------------------------------------------- */
-
-        .whatsapp-float {
-            position: fixed;
-            right: 1.5rem;
-            bottom: 1.5rem;
-            z-index: 1500;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: #25D366;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 2px 8px rgba(11, 22, 61, 0.15);
-            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5), 0 4px 12px rgba(11, 22, 61, 0.2);
-        }
-
-        .whatsapp-float svg {
-            width: 30px;
-            height: 30px;
-        }
-
-        .whatsapp-tooltip {
-            position: absolute;
-            right: 68px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--color-primary);
-            color: #fff;
-            font-family: var(--font-body, inherit);
-            font-size: 0.82rem;
-            font-weight: 500;
-            padding: 0.5rem 0.9rem;
-            border-radius: 8px;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-        }
-
-        .whatsapp-float:hover .whatsapp-tooltip {
-            opacity: 1;
-            transform: translateY(-50%) translateX(-4px);
-        }
-
-        @media (max-width: 560px) {
-            .whatsapp-float {
-                right: 1rem;
-                bottom: 1rem;
-                width: 52px;
-                height: 52px;
-            }
-            .whatsapp-float svg {
-                width: 26px;
-                height: 26px;
-            }
-            .whatsapp-tooltip {
-                display: none;
-            }
-        }
-
-    
-        /* WORDMARK LOGO */
-        .wordmark-logo { width: 148px; max-width: 100%; height: auto; max-height: 32px; object-fit: contain; display: block; }
-        @media (max-width: 480px) { .wordmark-logo { width: 118px; max-height: 26px; } .nav-logo { max-width: 135px; } }
-        /* FOOTER GRID */
+        /* FOOTER */
+        .site-footer { background: var(--color-primary); color: rgba(255,255,255,0.72); padding-top: 3rem; }
         .footer-wordmark { filter: brightness(0) invert(1) !important; opacity: 1 !important; width: 148px; max-width: 100%; max-height: 32px; height: auto; }
         .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.12); }
-        .footer-brand p { margin-top: 1rem; max-width: 260px; font-size: 0.875rem; color: rgba(255,255,255,0.55); }
-        .footer-col h4 { color: #fff; font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+        .footer-brand p { margin-top: 1rem; max-width: 260px; font-size: var(--fs-small); color: rgba(255,255,255,0.55); }
+        .footer-col h4 { color: #fff; font-size: var(--fs-small); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
         .footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; list-style: none; padding: 0; }
-        .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+        .footer-col a { font-size: var(--fs-small); color: rgba(255,255,255,0.65); transition: color var(--dur-fast); }
         .footer-col a:hover { color: #fff; }
+        .footer-bottom { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem; padding-block: 1.5rem; font-size: var(--fs-small); color: rgba(255,255,255,0.45); text-align: center; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom,0px)); }
+        .footer-bottom a { color: rgba(255,255,255,0.65); text-decoration: underline; }
+        .footer-bottom a:hover { color: #fff; }
         @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
-        </style>
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } .legal-main { padding: 2.5rem 0 4rem; } }
+    </style>
 </head>
 <body>
-
-    <a href="index.html#main" class="skip-link">Skip to content</a>
-
-    <header class="site-header" id="siteHeader">
+<header class="site-header" id="siteHeader">
     <nav class="navbar container" aria-label="Navegación principal">
         <a href="index.html" class="nav-logo" aria-label="Azyvion Technologies — Inicio">
             <img class="wordmark-logo" src="./azyvion-wordmark.png" alt="AZYVION">
@@ -260,51 +97,46 @@
         <a href="index.html" class="btn btn-primary">Ir al inicio</a>
     </nav>
 </header>
+<main class="legal-main">
+    <div class="container legal-content">
+        <a href="index.html" class="legal-back">&larr; Volver a Azyvion</a>
+        <h1>Términos de Servicio</h1>
+        <p class="legal-updated">Última actualización: 1 de octubre de 2026</p>
 
-    <main id="main" class="legal-main">
-        <div class="container legal-content">
+        <p>Estos Términos de Servicio (&ldquo;Términos&rdquo;) rigen el acceso y uso del sitio web de Azyvion Technologies (el &ldquo;Sitio&rdquo;). Al acceder o usar el Sitio, aceptas quedar vinculado por estos Términos. Si no estás de acuerdo, no uses el Sitio.</p>
 
-            <a href="index.html" class="legal-back">&larr; Back to Azyvion</a>
+        <h2>1. Uso del sitio</h2>
+        <p>Solo puedes usar este Sitio con fines lícitos. Aceptas no usar el Sitio de ninguna manera que pueda dañarlo, inhabilitarlo, sobrecargarlo o deteriorarlo, ni interferir con el uso del Sitio por parte de otros usuarios.</p>
 
-            <h1>Terms of Service</h1>
-            <p class="legal-updated">Last updated: August 6, 2026</p>
+        <h2>2. Propiedad intelectual</h2>
+        <p>Todo el contenido de este Sitio, incluyendo pero no limitado a textos, gráficos, logotipos, el nombre y marcas de Azyvion, y la plataforma ATLAS, es propiedad de Azyvion o de sus licenciantes y está protegido por las leyes de propiedad intelectual aplicables. No puedes reproducir, distribuir, modificar ni crear obras derivadas de ninguna parte del Sitio sin nuestro consentimiento previo y por escrito.</p>
 
-            <p>These Terms of Service ("Terms") govern your access to and use of the Azyvion website (the "Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site.</p>
+        <h2>3. Formulario de contacto y comunicaciones</h2>
+        <p>Al enviar información a través de nuestro formulario de contacto, confirmas que la información proporcionada es exacta y que consientes ser contactado por Azyvion en relación con tu consulta.</p>
 
-            <h2>1. Use of the Site</h2>
-            <p>You may use this Site for lawful purposes only. You agree not to use the Site in any way that could damage, disable, overburden, or impair it, or interfere with any other party's use of the Site.</p>
+        <h2>4. Enlaces a terceros</h2>
+        <p>El Sitio puede contener enlaces a sitios web o servicios de terceros que no son propiedad ni están controlados por Azyvion. No somos responsables del contenido, las políticas de privacidad ni las prácticas de ningún sitio de terceros.</p>
 
-            <h2>2. Intellectual Property</h2>
-            <p>All content on this Site, including but not limited to text, graphics, logos, the Azyvion name and marks, and the ATLAS platform, is the property of Azyvion or its licensors and is protected by applicable intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any part of the Site without our prior written consent.</p>
+        <h2>5. Exclusión de garantías</h2>
+        <p>El Sitio y su contenido se proporcionan &ldquo;tal cual&rdquo; y &ldquo;según disponibilidad&rdquo;, sin garantías de ningún tipo, expresas o implícitas. No garantizamos que el Sitio sea ininterrumpido, seguro o libre de errores.</p>
 
-            <h2>3. Contact Form and Communications</h2>
-            <p>By submitting information through our contact form, you confirm that the information provided is accurate and that you consent to being contacted by Azyvion regarding your inquiry.</p>
+        <h2>6. Limitación de responsabilidad</h2>
+        <p>En la máxima medida permitida por la ley aplicable, Azyvion no será responsable de ningún daño indirecto, incidental, especial o consecuente derivado de tu uso o incapacidad de usar el Sitio.</p>
 
-            <h2>4. Third-Party Links</h2>
-            <p>The Site may contain links to third-party websites or services that are not owned or controlled by Azyvion. We are not responsible for the content, privacy policies, or practices of any third-party sites.</p>
+        <h2>7. Cambios en el sitio o en los términos</h2>
+        <p>Podemos actualizar, modificar o discontinuar cualquier parte del Sitio en cualquier momento sin previo aviso. También podemos revisar estos Términos periódicamente; la versión actualizada se publicará en esta página con una nueva fecha de revisión. El uso continuado del Sitio tras los cambios constituye la aceptación de los Términos revisados.</p>
 
-            <h2>5. Disclaimer of Warranties</h2>
-            <p>The Site and its content are provided on an "as is" and "as available" basis, without warranties of any kind, either express or implied. We do not warrant that the Site will be uninterrupted, secure, or error-free.</p>
+        <h2>8. Legislación aplicable</h2>
+        <p>Estos Términos se rigen por la legislación vigente en la República de Guatemala. En caso de controversia, las partes acuerdan buscar primero una resolución amistosa antes de recurrir a cualquier otro remedio disponible bajo la ley aplicable.</p>
 
-            <h2>6. Limitation of Liability</h2>
-            <p>To the fullest extent permitted by applicable law, Azyvion shall not be liable for any indirect, incidental, special, or consequential damages arising out of or related to your use of, or inability to use, the Site.</p>
-
-            <h2>7. Changes to the Site or Terms</h2>
-            <p>We may update, modify, or discontinue any part of the Site at any time without notice. We may also revise these Terms from time to time; the updated version will be posted on this page with a new revision date. Continued use of the Site after changes take effect constitutes acceptance of the revised Terms.</p>
-
-            <h2>8. Governing Principles</h2>
-            <p>These Terms are intended to be interpreted fairly and in good faith. In the event of a dispute, both parties agree to first seek an amicable resolution before pursuing any other remedy available under applicable law.</p>
-
-            <h2>9. Contact Us</h2>
-            <p>If you have any questions about these Terms, please contact us at <a class="inline-link" href="mailto:azyvion.tech@gmail.com">azyvion.tech@gmail.com</a>.</p>
-
-        </div>
-    </main>
-
-    <footer class="site-footer">
+        <h2>9. Contáctanos</h2>
+        <p>Si tienes alguna pregunta sobre estos Términos, contáctanos en <a class="inline-link" href="mailto:azyvion.tech@gmail.com">azyvion.tech@gmail.com</a>.</p>
+    </div>
+</main>
+<footer class="site-footer">
     <div class="container footer-grid">
         <div class="footer-brand">
-            <a href="index.html" class="nav-logo footer-logo" aria-label="Azyvion — Inicio">
+            <a href="index.html" class="nav-logo" aria-label="Azyvion — Inicio">
                 <img class="wordmark-logo footer-wordmark" src="./azyvion-wordmark.png" alt="AZYVION">
             </a>
             <p>Construyendo tecnología inteligente con la que la gente puede crecer.</p>
@@ -336,121 +168,17 @@
         </div>
     </div>
     <div class="container footer-bottom">
-        <p>&copy; <span id="year"></span> Azyvion Technologies · Ciudad de Guatemala, Guatemala</p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&copy; <span id="year"></span> Azyvion Technologies &middot; Ciudad de Guatemala, Guatemala</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="privacy.html">Privacidad</a></p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="terms.html">Términos</a></p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="cookies.html">Cookies</a></p>
-        <p>&nbsp;·&nbsp;</p>
+        <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="legal.html">Aviso Legal</a></p>
     </div>
 </footer>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-
-
-
-    <!-- ========================================= -->
-    <!-- WHATSAPP FLOATING BUTTON -->
-    <!-- ========================================= -->
-
-    <a
-        href="https://wa.me/50255630559?text=Hola%20Azyvion%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n"
-        class="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with Azyvion on WhatsApp"
-    >
-        <span class="whatsapp-tooltip">Chat with us</span>
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 3C7.03 3 3 7.03 3 12c0 1.77.5 3.42 1.37 4.83L3 21l4.3-1.34A8.93 8.93 0 0 0 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9Z" fill="#fff"/>
-            <path d="M9.1 8.2c-.2-.45-.42-.46-.62-.47h-.53c-.18 0-.48.07-.73.35-.25.28-.96.93-.96 2.27s.98 2.64 1.12 2.82c.14.18 1.9 3 4.65 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.12-.25-.19-.53-.33-.28-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.6.14-.18.28-.7.88-.86 1.06-.16.18-.31.2-.59.07-.28-.14-1.17-.43-2.23-1.38-.83-.74-1.38-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.5-.07-.14-.6-1.5-.85-2.05Z" fill="#25D366"/>
-        </svg>
-    </a>
-
-    <!-- ========================================= -->
-    <!-- COOKIE CONSENT BANNER -->
-    <!-- ========================================= -->
-
-    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite">
-        <div class="cookie-banner-inner">
-            <p class="cookie-banner-text">
-                We use cookies to understand how visitors use Azyvion and to improve your experience. See our
-                <a href="privacy.html">Privacy Policy</a> for details.
-            </p>
-            <div class="cookie-banner-actions">
-                <button type="button" class="cookie-btn cookie-btn-decline" id="cookieDecline">Decline</button>
-                <button type="button" class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-    (function () {
-        var CONSENT_KEY = 'azyvion_cookie_consent';
-        var banner = document.getElementById('cookieBanner');
-        var acceptBtn = document.getElementById('cookieAccept');
-        var declineBtn = document.getElementById('cookieDecline');
-
-        // --- Google Analytics (GA4) ---
-        // Replace G-XXXXXXXXXX with your real Measurement ID once you have one.
-        // Analytics only loads if the visitor has accepted cookies.
-        var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
-
-        function loadAnalytics() {
-            if (GA_MEASUREMENT_ID.indexOf('XXXX') !== -1) return; // placeholder not replaced yet
-            if (window.__azyvionAnalyticsLoaded) return;
-            window.__azyvionAnalyticsLoaded = true;
-
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
-            document.head.appendChild(script);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { window.dataLayer.push(arguments); }
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
-        }
-
-        function showBanner() {
-            requestAnimationFrame(function () {
-                banner.classList.add('visible');
-            });
-        }
-
-        function hideBanner() {
-            banner.classList.remove('visible');
-        }
-
-        var consent = null;
-        try {
-            consent = localStorage.getItem(CONSENT_KEY);
-        } catch (e) {
-            consent = null;
-        }
-
-        if (consent === 'accepted') {
-            loadAnalytics();
-        } else if (consent !== 'declined') {
-            showBanner();
-        }
-
-        acceptBtn.addEventListener('click', function () {
-            try { localStorage.setItem(CONSENT_KEY, 'accepted'); } catch (e) {}
-            loadAnalytics();
-            hideBanner();
-        });
-
-        declineBtn.addEventListener('click', function () {
-            try { localStorage.setItem(CONSENT_KEY, 'declined'); } catch (e) {}
-            hideBanner();
-        });
-    })();
-    </script>
-
-
 </body>
 </html>
