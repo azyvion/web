@@ -180,12 +180,9 @@
       object-position: center top;
       display: block;
     }
-    /* Fade de derecha a izquierda para integrar con el texto */
+    /* Sin overlay en desktop */
     .hero-photo-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0.6) 35%, transparent 65%);
+      content: none;
     }
 
     .hero-bg {
@@ -415,7 +412,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 860px) {
-      .hero-content { grid-template-columns: 1fr; gap: var(--space-5); }
+      .hero-content { grid-template-columns: 1fr; gap: 0; }
       /* En móvil la foto es un header encima del texto */
       .hero-photo-bg {
         position: relative;
@@ -424,6 +421,7 @@
         max-height: 100vw;
         border-radius: 0 0 var(--radius-lg) var(--radius-lg);
         overflow: hidden;
+        margin-bottom: 0;
       }
       .hero-photo-bg img {
         width: 100%;
@@ -432,12 +430,17 @@
         object-position: center top;
       }
       .hero-photo-bg::after {
-        background: linear-gradient(to bottom, transparent 55%, #fff 100%);
+        content: '';
+        background: linear-gradient(to bottom, transparent 65%, #fff 100%);
       }
       .hero {
         flex-direction: column;
         align-items: stretch;
         padding-top: var(--header-h);
+        gap: 0;
+      }
+      .hero > .container {
+        padding-top: var(--space-3);
       }
       .about-grid { grid-template-columns: 1fr; }
       .about-sticky { position: static; }
