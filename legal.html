@@ -34,17 +34,30 @@ a:hover{color:#0B163D;}
 .site-footer{background:var(--color-primary);color:rgba(255,255,255,.55);padding:1.5rem 2rem;text-align:center;font-size:.82rem;}
 .site-footer a{color:rgba(255,255,255,.75);text-decoration:underline;}
 @media(max-width:600px){.prose{padding:0 1.25rem;}.navbar{padding:0 1.25rem;}}
-</style>
+
+        /* WORDMARK LOGO */
+        .wordmark-logo { width: 148px; max-width: 100%; height: auto; max-height: 32px; object-fit: contain; display: block; }
+        @media (max-width: 480px) { .wordmark-logo { width: 118px; max-height: 26px; } .nav-logo { max-width: 135px; } }
+        /* FOOTER GRID */
+        .footer-wordmark { filter: brightness(0) invert(1) !important; opacity: 1 !important; width: 148px; max-width: 100%; max-height: 32px; height: auto; }
+        .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.12); }
+        .footer-brand p { margin-top: 1rem; max-width: 260px; font-size: 0.875rem; color: rgba(255,255,255,0.55); }
+        .footer-col h4 { color: #fff; font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+        .footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; list-style: none; padding: 0; }
+        .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+        .footer-col a:hover { color: #fff; }
+        @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+        </style>
 </head>
 <body>
-<header class="site-header">
-  <nav class="navbar" aria-label="Navegación">
-    <a href="index.html" class="nav-logo">
-      <svg width="22" height="24" viewBox="0 0 26 28" fill="none"><path d="M13 2L24 8.5V19.5L13 26L2 19.5V8.5L13 2Z" fill="#0B163D"/><path d="M8 11L13 8L18 11V17L13 20L8 17V11Z" fill="#2979FF"/></svg>
-      AZYVION
-    </a>
-    <a href="index.html" class="nav-back">← Volver al inicio</a>
-  </nav>
+<header class="site-header" id="siteHeader">
+    <nav class="navbar container" aria-label="Navegación principal">
+        <a href="index.html" class="nav-logo" aria-label="Azyvion Technologies — Inicio">
+            <img class="wordmark-logo" src="./azyvion-wordmark.png" alt="AZYVION">
+        </a>
+        <a href="index.html" class="btn btn-primary">Ir al inicio</a>
+    </nav>
 </header>
 <main>
 <article class="prose">
@@ -87,7 +100,51 @@ a:hover{color:#0B163D;}
 </article>
 </main>
 <footer class="site-footer">
-  <p>&copy; <script>document.write(new Date().getFullYear())</script> Azyvion. Todos los derechos reservados. &nbsp;·&nbsp; <a href="privacy.html">Privacidad</a> &nbsp;·&nbsp; <a href="terms.html">Términos</a> &nbsp;·&nbsp; <a href="cookies.html">Cookies</a></p>
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <a href="index.html" class="nav-logo footer-logo" aria-label="Azyvion — Inicio">
+                <img class="wordmark-logo footer-wordmark" src="./azyvion-wordmark.png" alt="AZYVION">
+            </a>
+            <p>Construyendo tecnología inteligente con la que la gente puede crecer.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#about">Nosotros</a></li>
+                <li><a href="index.html#team">Equipo</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Hector Enrique</h4>
+            <ul>
+                <li><a href="hector-enrique-reyes-muy.html">Perfil CEO</a></li>
+                <li><a href="https://www.linkedin.com/in/hectorreyes2005/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="privacy.html">Política de Privacidad</a></li>
+                <li><a href="terms.html">Términos de Servicio</a></li>
+                <li><a href="cookies.html">Aviso de Cookies</a></li>
+                <li><a href="legal.html">Aviso Legal</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <p>&copy; <span id="year"></span> Azyvion Technologies · Ciudad de Guatemala, Guatemala</p>
+        <p>&nbsp;·&nbsp;</p>
+        <p><a href="privacy.html">Privacidad</a></p>
+        <p>&nbsp;·&nbsp;</p>
+        <p><a href="terms.html">Términos</a></p>
+        <p>&nbsp;·&nbsp;</p>
+        <p><a href="cookies.html">Cookies</a></p>
+        <p>&nbsp;·&nbsp;</p>
+        <p><a href="legal.html">Aviso Legal</a></p>
+    </div>
 </footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
