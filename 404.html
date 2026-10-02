@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Página no encontrada — Azyvion</title>
+<meta name="description" content="La página que buscas no existe. Vuelve al inicio de Azyvion.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0B163D">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--color-primary:#0B163D;--color-secondary:#2979FF;--font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-body);color:#111827;background:#F8FAFC;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;-webkit-font-smoothing:antialiased;text-align:center;}
+.error-code{font-family:var(--font-display);font-size:clamp(5rem,15vw,10rem);font-weight:700;color:transparent;-webkit-text-stroke:2px var(--color-secondary);line-height:1;margin-bottom:1rem;letter-spacing:-4px;}
+h1{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.2rem);color:var(--color-primary);margin-bottom:1rem;}
+p{color:#667085;font-size:1rem;max-width:420px;line-height:1.65;margin-bottom:2rem;}
+.actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:999px;font-family:var(--font-display);font-size:.9rem;font-weight:600;text-decoration:none;transition:transform .2s;}
+.btn-primary{background:var(--color-primary);color:#fff;}
+.btn-primary:hover{background:#0e1e52;transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--color-primary);border:1.5px solid #E5E7EB;}
+.btn-ghost:hover{background:#fff;transform:translateY(-2px);}
+.orbit-anim{animation:spin 20s linear infinite;transform-origin:center;}
+@keyframes spin{to{transform:rotate(360deg);}}
+</style>
+</head>
+<body>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true" style="margin-bottom:1.5rem">
+  <circle cx="60" cy="60" r="55" stroke="#E5E7EB" stroke-width="1.5"/>
+  <circle class="orbit-anim" cx="60" cy="60" r="40" stroke="#2979FF" stroke-width="1" stroke-dasharray="4 8"/>
+  <circle cx="60" cy="60" r="12" fill="#0B163D"/>
+  <circle cx="60" cy="20" r="5" fill="#2979FF"/>
+</svg>
+<div class="error-code">404</div>
+<h1>Página no encontrada</h1>
+<p>La página que buscas no existe o fue movida. Vuelve al inicio y sigue explorando el ecosistema Azyvion.</p>
+<div class="actions">
+  <a href="index.html" class="btn btn-primary">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L3 8L8 13M3 8H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Ir al inicio
+  </a>
+  <a href="download.html" class="btn btn-ghost">Descargar Azyvion AI</a>
+</div>
+</body>
+</html>

@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://azyvion.github.io/web/sitemap.xml
+Disallow: /unsubscribe.html
+Disallow: /404.html
+
+Sitemap: https://azyvion.pages.dev/sitemap.xml
