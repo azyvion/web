@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Darse de baja — Azyvion</title>
+<title data-title-es="Darse de baja — Azyvion" data-title-en="Unsubscribe — Azyvion">Darse de baja — Azyvion</title>
 <meta name="description" content="Solicita darte de baja de las comunicaciones de Azyvion.">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#0B163D">
@@ -37,27 +37,27 @@ body{font-family:var(--font-body);color:#111827;background:#F8FAFC;min-height:10
     <circle cx="24" cy="24" r="22" fill="#EFF6FF" stroke="#2979FF" stroke-width="1.5"/>
     <path d="M16 24H32M28 20L32 24L28 28" stroke="#2979FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
-  <h1>Darse de baja</h1>
-  <p>¿Ya no deseas recibir correos de Azyvion? Ingresa tu correo electrónico y procesaremos tu solicitud de baja en menos de 72 horas.</p>
+  <h1 data-es="Darse de baja" data-en="Unsubscribe">Darse de baja</h1>
+  <p data-es="¿Ya no deseas recibir correos de Azyvion? Ingresa tu correo electrónico y procesaremos tu solicitud de baja en menos de 72 horas." data-en="No longer want to receive emails from Azyvion? Enter your email address and we'll process your unsubscribe request within 72 hours.">¿Ya no deseas recibir correos de Azyvion? Ingresa tu correo electrónico y procesaremos tu solicitud de baja en menos de 72 horas.</p>
   <form id="unsubForm">
     <div class="form-group">
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" placeholder="tu@correo.com" required autocomplete="email">
+      <label for="email" data-es="Correo electrónico" data-en="Email address">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="tu@correo.com" data-es="tu@correo.com" data-en="your@email.com" required autocomplete="email">
     </div>
     <input type="hidden" name="access_key" value="3566eb79-a149-4fc1-897b-edea9f1b90d4">
     <input type="hidden" name="subject" value="Solicitud de baja — Azyvion">
     <input type="hidden" name="message" value="El usuario solicita darse de baja de las comunicaciones de Azyvion.">
     <input type="checkbox" name="botcheck" style="display:none" tabindex="-1">
-    <button type="submit" class="btn" id="unsubBtn">Solicitar baja</button>
-    <p class="success" id="successMsg">✓ Tu solicitud fue recibida. Te daremos de baja en las próximas 72 horas.</p>
+    <button type="submit" class="btn" id="unsubBtn" data-es="Solicitar baja" data-en="Unsubscribe">Solicitar baja</button>
+    <p class="success" id="successMsg" data-es="✓ Tu solicitud fue recibida. Te daremos de baja en las próximas 72 horas." data-en="✓ Your request was received. You'll be unsubscribed within the next 72 hours.">✓ Tu solicitud fue recibida. Te daremos de baja en las próximas 72 horas.</p>
   </form>
-  <p class="note">¿Cambio de opinión? Puedes <a href="index.html">volver al sitio</a> o escribirnos a <a href="mailto:azyvion.tech@gmail.com">azyvion.tech@gmail.com</a>.</p>
+  <p class="note" data-es="¿Cambio de opinión? Puedes <a href='index.html'>volver al sitio</a> o escribirnos a <a href='mailto:azyvion.tech@gmail.com'>azyvion.tech@gmail.com</a>." data-en="Changed your mind? You can <a href='index.html'>return to the site</a> or email us at <a href='mailto:azyvion.tech@gmail.com'>azyvion.tech@gmail.com</a>.">¿Cambio de opinión? Puedes <a href="index.html">volver al sitio</a> o escribirnos a <a href="mailto:azyvion.tech@gmail.com">azyvion.tech@gmail.com</a>.</p>
 </div>
 <script>
 document.getElementById('unsubForm').addEventListener('submit', function(e){
   e.preventDefault();
   var btn = document.getElementById('unsubBtn');
-  btn.textContent = 'Procesando...'; btn.disabled = true;
+  btn.textContent = document.documentElement.lang !== 'es' ? 'Processing...' : 'Procesando...'; btn.disabled = true;
   fetch('https://api.web3forms.com/submit', {
     method:'POST', headers:{'Content-Type':'application/json',Accept:'application/json'},
     body: JSON.stringify(Object.fromEntries(new FormData(this)))
@@ -65,9 +65,41 @@ document.getElementById('unsubForm').addEventListener('submit', function(e){
     document.getElementById('successMsg').style.display = 'block';
     btn.style.display = 'none';
   }).catch(function(){
-    btn.textContent = 'Error. Inténtalo de nuevo.'; btn.disabled = false;
+    btn.textContent = document.documentElement.lang !== 'es' ? 'Error. Try again.' : 'Error. Inténtalo de nuevo.'; btn.disabled = false;
   });
 });
 </script>
+
+<script>
+(function(){
+  var CACHE_KEY='azyvion_lang';
+  var ES_COUNTRIES=['AR','BO','CL','CO','CR','CU','DO','EC','SV','GQ','GT','HN','MX','NI','PA','PY','PE','PR','ES','UY','VE'];
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      var isInput=(el.tagName==='INPUT'||el.tagName==='TEXTAREA');
+      var txt = (lang!=='es' && el.dataset.en) ? el.dataset.en : (el.dataset.es||'');
+      if(!txt) return;
+      if(isInput){ el.placeholder=txt; } else { el.innerHTML=txt; }
+    });
+    document.querySelectorAll('[data-title-es]').forEach(function(el){
+      var t=(lang!=='es' && el.dataset.titleEn)?el.dataset.titleEn:el.dataset.titleEs;
+      if(t) document.title=t;
+    });
+  }
+  var cached=null;
+  try{ cached=sessionStorage.getItem(CACHE_KEY); }catch(e){}
+  if(cached){ applyLang(cached); return; }
+  fetch('https://ipapi.co/json/')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var lang=ES_COUNTRIES.indexOf(d.country_code)!==-1?'es':'en';
+      try{sessionStorage.setItem(CACHE_KEY,lang);}catch(e){}
+      applyLang(lang);
+    })
+    .catch(function(){applyLang('es');});
+})();
+</script>
+
 </body>
 </html>

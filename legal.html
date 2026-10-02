@@ -100,7 +100,7 @@
 <main class="legal-main">
     <div class="container legal-content">
         <a href="index.html" class="legal-back">&larr; Volver a Azyvion</a>
-        <h1>Aviso Legal</h1>
+        <h1 data-es="Aviso Legal" data-en="Legal Notice">Aviso Legal</h1>
         <p class="legal-updated">Última actualización: 1 de octubre de 2026</p>
 
         <h2>1. Titular del sitio web</h2>
@@ -149,10 +149,10 @@
         <div class="footer-col">
             <h4>Navegación</h4>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#about">Nosotros</a></li>
-                <li><a href="index.html#team">Equipo</a></li>
-                <li><a href="index.html#contact">Contacto</a></li>
+                <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+                <li><a href="index.html#about" data-es="Nosotros" data-en="About">Nosotros</a></li>
+                <li><a href="index.html#team" data-es="Equipo" data-en="Team">Equipo</a></li>
+                <li><a href="index.html#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
             </ul>
         </div>
         <div class="footer-col">
@@ -165,10 +165,10 @@
         <div class="footer-col">
             <h4>Legal</h4>
             <ul>
-                <li><a href="privacy.html">Política de Privacidad</a></li>
-                <li><a href="terms.html">Términos de Servicio</a></li>
-                <li><a href="cookies.html">Aviso de Cookies</a></li>
-                <li><a href="legal.html">Aviso Legal</a></li>
+                <li><a href="privacy.html" data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</a></li>
+                <li><a href="terms.html" data-es="Términos de Servicio" data-en="Terms of Service">Términos de Servicio</a></li>
+                <li><a href="cookies.html" data-es="Aviso de Cookies" data-en="Cookie Notice">Aviso de Cookies</a></li>
+                <li><a href="legal.html" data-es="Aviso Legal" data-en="Legal Notice">Aviso Legal</a></li>
             </ul>
         </div>
     </div>
@@ -181,9 +181,41 @@
         <p>&nbsp;&middot;&nbsp;</p>
         <p><a href="cookies.html">Cookies</a></p>
         <p>&nbsp;&middot;&nbsp;</p>
-        <p><a href="legal.html">Aviso Legal</a></p>
+        <p><a href="legal.html" data-es="Aviso Legal" data-en="Legal Notice">Aviso Legal</a></p>
     </div>
 </footer>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<script>
+(function(){
+  var CACHE_KEY='azyvion_lang';
+  var ES_COUNTRIES=['AR','BO','CL','CO','CR','CU','DO','EC','SV','GQ','GT','HN','MX','NI','PA','PY','PE','PR','ES','UY','VE'];
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      var isInput=(el.tagName==='INPUT'||el.tagName==='TEXTAREA');
+      var txt = (lang!=='es' && el.dataset.en) ? el.dataset.en : (el.dataset.es||'');
+      if(!txt) return;
+      if(isInput){ el.placeholder=txt; } else { el.innerHTML=txt; }
+    });
+    document.querySelectorAll('[data-title-es]').forEach(function(el){
+      var t=(lang!=='es' && el.dataset.titleEn)?el.dataset.titleEn:el.dataset.titleEs;
+      if(t) document.title=t;
+    });
+  }
+  var cached=null;
+  try{ cached=sessionStorage.getItem(CACHE_KEY); }catch(e){}
+  if(cached){ applyLang(cached); return; }
+  fetch('https://ipapi.co/json/')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var lang=ES_COUNTRIES.indexOf(d.country_code)!==-1?'es':'en';
+      try{sessionStorage.setItem(CACHE_KEY,lang);}catch(e){}
+      applyLang(lang);
+    })
+    .catch(function(){applyLang('es');});
+})();
+</script>
+
 </body>
 </html>

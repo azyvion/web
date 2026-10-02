@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Página no encontrada — Azyvion</title>
+<title data-title-es="Página no encontrada — Azyvion" data-title-en="Page Not Found — Azyvion">Página no encontrada — Azyvion</title>
 <meta name="description" content="La página que buscas no existe. Vuelve al inicio de Azyvion.">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#0B163D">
@@ -36,14 +36,46 @@ p{color:#667085;font-size:1rem;max-width:420px;line-height:1.65;margin-bottom:2r
   <circle cx="60" cy="20" r="5" fill="#2979FF"/>
 </svg>
 <div class="error-code">404</div>
-<h1>Página no encontrada</h1>
-<p>La página que buscas no existe o fue movida. Vuelve al inicio y sigue explorando el ecosistema Azyvion.</p>
+<h1 data-es="Página no encontrada" data-en="Page Not Found">Página no encontrada</h1>
+<p data-es="La página que buscas no existe o fue movida. Vuelve al inicio y sigue explorando el ecosistema Azyvion." data-en="The page you're looking for doesn't exist or was moved. Go back to the home page and keep exploring the Azyvion ecosystem.">La página que buscas no existe o fue movida. Vuelve al inicio y sigue explorando el ecosistema Azyvion.</p>
 <div class="actions">
   <a href="index.html" class="btn btn-primary">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L3 8L8 13M3 8H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Ir al inicio
   </a>
-  <a href="download.html" class="btn btn-ghost">Descargar Azyvion AI</a>
+  <a href="download.html" class="btn btn-ghost" data-es="Descargar Azyvion AI" data-en="Download Azyvion AI">Descargar Azyvion AI</a>
 </div>
+
+<script>
+(function(){
+  var CACHE_KEY='azyvion_lang';
+  var ES_COUNTRIES=['AR','BO','CL','CO','CR','CU','DO','EC','SV','GQ','GT','HN','MX','NI','PA','PY','PE','PR','ES','UY','VE'];
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      var isInput=(el.tagName==='INPUT'||el.tagName==='TEXTAREA');
+      var txt = (lang!=='es' && el.dataset.en) ? el.dataset.en : (el.dataset.es||'');
+      if(!txt) return;
+      if(isInput){ el.placeholder=txt; } else { el.innerHTML=txt; }
+    });
+    document.querySelectorAll('[data-title-es]').forEach(function(el){
+      var t=(lang!=='es' && el.dataset.titleEn)?el.dataset.titleEn:el.dataset.titleEs;
+      if(t) document.title=t;
+    });
+  }
+  var cached=null;
+  try{ cached=sessionStorage.getItem(CACHE_KEY); }catch(e){}
+  if(cached){ applyLang(cached); return; }
+  fetch('https://ipapi.co/json/')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var lang=ES_COUNTRIES.indexOf(d.country_code)!==-1?'es':'en';
+      try{sessionStorage.setItem(CACHE_KEY,lang);}catch(e){}
+      applyLang(lang);
+    })
+    .catch(function(){applyLang('es');});
+})();
+</script>
+
 </body>
 </html>
